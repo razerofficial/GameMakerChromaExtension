@@ -3,11 +3,35 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <NewExtensions/>
+  <datafiles number="1" name="datafiles">
+    <datafile>
+      <name>CChromaEditorLibrary.dll</name>
+      <exists>-1</exists>
+      <size>178688</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>CChromaEditorLibrary.dll</filename>
+    </datafile>
+  </datafiles>
+  <NewExtensions>
+    <extension index="0">extensions\ChromaSDK</extension>
+  </NewExtensions>
   <sounds name="sound"/>
   <sprites name="sprites"/>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <script>scripts\ScriptPluginOpenEditorDialog.gml</script>
+  </scripts>
   <objects name="objects">
     <object>objects\RandomKeyboardEffect</object>
   </objects>
