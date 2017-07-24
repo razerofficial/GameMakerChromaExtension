@@ -1,5 +1,4 @@
-effectId = 123;
-show_debug_message("****** OBJECT CREATED*****");
+show_debug_message("****** OPEN EDIT DIALOG *****");
 
 if (os_type == os_windows)
 {
@@ -7,7 +6,9 @@ if (os_type == os_windows)
     if (external_call(pluginIsDialogOpen) == 0.0)
     {
         pluginOpenEditorDialog = external_define('CChromaEditorLibrary.dll', 'PluginOpenEditorDialog', dll_cdecl, ty_real, 1, ty_string);
-        external_call(pluginOpenEditorDialog, 'hello world!');
+        external_call(pluginOpenEditorDialog, 'KeyboardEffect.chroma');
     }
+    
+    show_debug_message("****** DIALOG OPENED *****");
 }
 
