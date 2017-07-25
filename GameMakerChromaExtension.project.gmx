@@ -3,7 +3,7 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="5" name="datafiles">
+  <datafiles number="10" name="datafiles">
     <datafile>
       <name>CChromaEditorLibrary.dll</name>
       <exists>-1</exists>
@@ -22,6 +22,57 @@
       <filename>CChromaEditorLibrary.dll</filename>
     </datafile>
     <datafile>
+      <name>ChromaLinkEffect.chroma</name>
+      <exists>-1</exists>
+      <size>34</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>ChromaLinkEffect.chroma</filename>
+    </datafile>
+    <datafile>
+      <name>HeadsetEffect.chroma</name>
+      <exists>-1</exists>
+      <size>34</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>HeadsetEffect.chroma</filename>
+    </datafile>
+    <datafile>
+      <name>KeypadEffect.chroma</name>
+      <exists>-1</exists>
+      <size>94</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>KeypadEffect.chroma</filename>
+    </datafile>
+    <datafile>
       <name>KeyboardEffect.chroma</name>
       <exists>-1</exists>
       <size>11182</size>
@@ -37,6 +88,40 @@
         </Config>
       </ConfigOptions>
       <filename>KeyboardEffect.chroma</filename>
+    </datafile>
+    <datafile>
+      <name>MouseEffect.chroma</name>
+      <exists>-1</exists>
+      <size>266</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>MouseEffect.chroma</filename>
+    </datafile>
+    <datafile>
+      <name>MousepadEffect.chroma</name>
+      <exists>-1</exists>
+      <size>74</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>MousepadEffect.chroma</filename>
     </datafile>
   </datafiles>
   <NewExtensions>
