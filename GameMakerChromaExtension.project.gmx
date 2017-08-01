@@ -133,9 +133,11 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\ScriptPluginOpenEditorDialog.gml</script>
+    <script>scripts\ScriptPluginAnimateOnKeyRelease.gml</script>
+    <script>scripts\ScriptGlobals.gml</script>
   </scripts>
   <objects name="objects">
-    <object>objects\RandomKeyboardEffect</object>
+    <object>objects\ObjectChromaPlayAnimation</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\ExampleRoom</room>

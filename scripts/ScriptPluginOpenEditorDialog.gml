@@ -1,7 +1,6 @@
-show_debug_message("****** OPEN EDIT DIALOG *****");
-
-if (os_type == os_windows)
+if (os_type == os_windows && false)
 {
+    show_debug_message("****** OPEN EDIT DIALOG *****");
     pluginIsDialogOpen = external_define('CChromaEditorLibrary.dll', 'PluginIsDialogOpen', dll_cdecl, ty_real, 0);
     if (external_call(pluginIsDialogOpen) == 0.0)
     {
