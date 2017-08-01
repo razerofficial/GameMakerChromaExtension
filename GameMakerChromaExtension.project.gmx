@@ -3,7 +3,7 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="10" name="datafiles">
+  <datafiles number="19" name="datafiles">
     <datafile>
       <name>CChromaEditorLibrary.dll</name>
       <exists>-1</exists>
@@ -22,9 +22,9 @@
       <filename>CChromaEditorLibrary.dll</filename>
     </datafile>
     <datafile>
-      <name>ChromaLinkEffect.chroma</name>
+      <name>KeyboardCoolFireAnimation.chroma</name>
       <exists>-1</exists>
-      <size>34</size>
+      <size>5862</size>
       <exportAction>2</exportAction>
       <exportDir></exportDir>
       <overwrite>0</overwrite>
@@ -36,12 +36,12 @@
           <CopyToMask>9223372036854775807</CopyToMask>
         </Config>
       </ConfigOptions>
-      <filename>ChromaLinkEffect.chroma</filename>
+      <filename>KeyboardCoolFireAnimation.chroma</filename>
     </datafile>
     <datafile>
-      <name>HeadsetEffect.chroma</name>
+      <name>KeyboardParticleAnimation.chroma</name>
       <exists>-1</exists>
-      <size>34</size>
+      <size>33526</size>
       <exportAction>2</exportAction>
       <exportDir></exportDir>
       <overwrite>0</overwrite>
@@ -53,12 +53,12 @@
           <CopyToMask>9223372036854775807</CopyToMask>
         </Config>
       </ConfigOptions>
-      <filename>HeadsetEffect.chroma</filename>
+      <filename>KeyboardParticleAnimation.chroma</filename>
     </datafile>
     <datafile>
-      <name>KeypadEffect.chroma</name>
+      <name>KeyboardParticleAnimation2.chroma</name>
       <exists>-1</exists>
-      <size>94</size>
+      <size>55338</size>
       <exportAction>2</exportAction>
       <exportDir></exportDir>
       <overwrite>0</overwrite>
@@ -70,12 +70,12 @@
           <CopyToMask>9223372036854775807</CopyToMask>
         </Config>
       </ConfigOptions>
-      <filename>KeypadEffect.chroma</filename>
+      <filename>KeyboardParticleAnimation2.chroma</filename>
     </datafile>
     <datafile>
-      <name>KeyboardEffect.chroma</name>
+      <name>RandomChromaLinkEffect.chroma</name>
       <exists>-1</exists>
-      <size>11182</size>
+      <size>322</size>
       <exportAction>2</exportAction>
       <exportDir></exportDir>
       <overwrite>0</overwrite>
@@ -87,12 +87,12 @@
           <CopyToMask>9223372036854775807</CopyToMask>
         </Config>
       </ConfigOptions>
-      <filename>KeyboardEffect.chroma</filename>
+      <filename>RandomChromaLinkEffect.chroma</filename>
     </datafile>
     <datafile>
-      <name>MouseEffect.chroma</name>
+      <name>RandomHeadsetEffect.chroma</name>
       <exists>-1</exists>
-      <size>266</size>
+      <size>322</size>
       <exportAction>2</exportAction>
       <exportDir></exportDir>
       <overwrite>0</overwrite>
@@ -104,12 +104,12 @@
           <CopyToMask>9223372036854775807</CopyToMask>
         </Config>
       </ConfigOptions>
-      <filename>MouseEffect.chroma</filename>
+      <filename>RandomHeadsetEffect.chroma</filename>
     </datafile>
     <datafile>
-      <name>MousepadEffect.chroma</name>
+      <name>RandomKeyboardEffect.chroma</name>
       <exists>-1</exists>
-      <size>74</size>
+      <size>7458</size>
       <exportAction>2</exportAction>
       <exportDir></exportDir>
       <overwrite>0</overwrite>
@@ -121,7 +121,58 @@
           <CopyToMask>9223372036854775807</CopyToMask>
         </Config>
       </ConfigOptions>
-      <filename>MousepadEffect.chroma</filename>
+      <filename>RandomKeyboardEffect.chroma</filename>
+    </datafile>
+    <datafile>
+      <name>RandomKeypadEffect.chroma</name>
+      <exists>-1</exists>
+      <size>1186</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>RandomKeypadEffect.chroma</filename>
+    </datafile>
+    <datafile>
+      <name>RandomMouseEffect.chroma</name>
+      <exists>-1</exists>
+      <size>3082</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>RandomMouseEffect.chroma</filename>
+    </datafile>
+    <datafile>
+      <name>RandomMousepadEffect.chroma</name>
+      <exists>-1</exists>
+      <size>970</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>RandomMousepadEffect.chroma</filename>
     </datafile>
   </datafiles>
   <NewExtensions>
