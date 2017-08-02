@@ -183,7 +183,7 @@
   <backgrounds name="background"/>
   <paths name="paths"/>
   <scripts name="scripts">
-    <script>scripts\ScriptPluginOpenEditorDialog.gml</script>
+    <script>scripts\ScriptAnimationEdit.gml</script>
     <script>scripts\ScriptPluginAnimateOnKeyRelease.gml</script>
     <script>scripts\ScriptGlobals.gml</script>
     <script>scripts\ScriptAnimationOpenAndPlay.gml</script>

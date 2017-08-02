@@ -1,4 +1,6 @@
 // init globals
+global.PluginIsDialogOpen = -1;
+global.PluginOpenEditorDialog = -1;
 global.PluginOpenAnimation = -1;
 global.PluginPlayAnimation = -1;
 global.PluginStopAnimation = -1;
