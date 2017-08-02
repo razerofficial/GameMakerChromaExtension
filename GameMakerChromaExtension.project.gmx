@@ -186,6 +186,7 @@
     <script>scripts\ScriptPluginOpenEditorDialog.gml</script>
     <script>scripts\ScriptPluginAnimateOnKeyRelease.gml</script>
     <script>scripts\ScriptGlobals.gml</script>
+    <script>scripts\ScriptAnimationOpenAndPlay.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\ObjectChromaPlayAnimation</object>
