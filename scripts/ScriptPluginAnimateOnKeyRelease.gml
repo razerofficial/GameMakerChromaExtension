@@ -1,5 +1,6 @@
 if (os_type == os_windows)
 {
+    // open and play animations
     if (keyboard_check_released(ord('1')))
     {
         global.ChromaPath = 'RandomChromaLinkEffect.chroma';
@@ -25,6 +26,28 @@ if (os_type == os_windows)
         global.ChromaPath = 'RandomMousepadEffect.chroma';
         global.ChromaId = global.ChromaMousepadEffect;
         global.ChromaMousepadEffect = ScriptAnimationOpenAndPlay();
+    }
+    
+    // stop animations
+    if (keyboard_check_released(ord('2')))
+    {
+        global.ChromaId = global.ChromaChromaLinkEffect;
+        ScriptAnimationStop();
+        
+        global.ChromaId = global.ChromaHeadsetEffect;
+        ScriptAnimationStop();
+        
+        global.ChromaId = global.ChromaKeyboardEffect;
+        ScriptAnimationStop();
+        
+        global.ChromaId = global.ChromaKeypadEffect;
+        ScriptAnimationStop();
+        
+        global.ChromaId = global.ChromaMouseEffect;
+        ScriptAnimationStop();
+        
+        global.ChromaId = global.ChromaMousepadEffect;
+        ScriptAnimationStop();
     }
 }
 

@@ -1,6 +1,7 @@
 // init globals
 global.PluginOpenAnimation = -1;
 global.PluginPlayAnimation = -1;
+global.PluginStopAnimation = -1;
 global.ChromaPath = ""
 global.ChromaId = -1;
 global.ChromaChromaLinkEffect = -1;

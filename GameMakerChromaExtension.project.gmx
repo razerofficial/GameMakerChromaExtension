@@ -187,6 +187,7 @@
     <script>scripts\ScriptPluginAnimateOnKeyRelease.gml</script>
     <script>scripts\ScriptGlobals.gml</script>
     <script>scripts\ScriptAnimationOpenAndPlay.gml</script>
+    <script>scripts\ScriptAnimationStop.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\ObjectChromaPlayAnimation</object>
