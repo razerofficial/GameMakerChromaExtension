@@ -1,4 +1,6 @@
-//show_debug_message("ScriptAnimationOpenAndPlay: "+global.ChromaPath);
+//show_debug_message("ScriptAnimationOpenAndPlay: path="+argument0+" id="+string(argument1));
+result = -1;
+chromaId = argument1;
 
 if (os_type == os_windows)
 {
@@ -15,18 +17,16 @@ if (os_type == os_windows)
     }
     
     // open animation
-    if (global.ChromaId == -1)
+    if (chromaId == -1)
     {
-        global.ChromaId = external_call(global.PluginOpenAnimation, global.ChromaPath);
-        //show_debug_message('PluginOpenAnimation result='+string(global.ChromaId));
+        chromaId = external_call(global.PluginOpenAnimation, argument0);
+        show_debug_message('PluginOpenAnimation result='+string(chromaId));
     }
 
     // play animation
-    global.ChromaId = external_call(global.PluginPlayAnimation, global.ChromaId);
-    show_debug_message('PluginPlayAnimation result='+string(global.ChromaId));
-    
-    return global.ChromaId;
+    result = external_call(global.PluginPlayAnimation, chromaId);
+    show_debug_message('PluginPlayAnimation result='+string(result));
 }
 
-return -1;
+return result;
 

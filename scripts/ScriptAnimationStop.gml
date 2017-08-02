@@ -1,4 +1,5 @@
-//show_debug_message("ScriptAnimationStop: "+global.ChromaPath);
+//show_debug_message("ScriptAnimationStop: "+string(argument0));
+result = -1;
 
 if (os_type == os_windows)
 {
@@ -9,14 +10,12 @@ if (os_type == os_windows)
     }
     
     // stop animation
-    if (global.ChromaId != -1)
+    if (argument0 != -1)
     {
-        global.ChromaId = external_call(global.PluginStopAnimation, global.ChromaId);
-        show_debug_message('PluginStopAnimation result='+string(global.ChromaId));
+        result = external_call(global.PluginStopAnimation, argument0);
+        show_debug_message('PluginStopAnimation result='+string(result));
     }
-   
-    return global.ChromaId;
 }
 
-return -1;
+return result;
 

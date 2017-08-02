@@ -3,51 +3,23 @@ if (os_type == os_windows)
     // open and play animations
     if (keyboard_check_released(ord('1')))
     {
-        global.ChromaPath = 'RandomChromaLinkEffect.chroma';
-        global.ChromaId = global.ChromaChromaLinkEffect;
-        global.ChromaChromaLinkEffect = ScriptAnimationOpenAndPlay();
-        
-        global.ChromaPath = 'RandomHeadsetEffect.chroma';
-        global.ChromaId = global.ChromaHeadsetEffect;
-        global.ChromaHeadsetEffect = ScriptAnimationOpenAndPlay();
-        
-        global.ChromaPath = 'KeyboardParticleAnimation.chroma';
-        global.ChromaId = global.ChromaKeyboardEffect;
-        global.ChromaKeyboardEffect = ScriptAnimationOpenAndPlay();
-        
-        global.ChromaPath = 'RandomKeypadEffect.chroma';
-        global.ChromaId = global.ChromaKeypadEffect;
-        global.ChromaKeypadEffect = ScriptAnimationOpenAndPlay();
-        
-        global.ChromaPath = 'RandomMouseEffect.chroma';
-        global.ChromaId = global.ChromaMouseEffect;
-        global.ChromaMouseEffect = ScriptAnimationOpenAndPlay();
-        
-        global.ChromaPath = 'RandomMousepadEffect.chroma';
-        global.ChromaId = global.ChromaMousepadEffect;
-        global.ChromaMousepadEffect = ScriptAnimationOpenAndPlay();
+        global.ChromaChromaLinkEffect = ScriptAnimationOpenAndPlay('RandomChromaLinkEffect.chroma', global.ChromaChromaLinkEffect);
+        global.ChromaHeadsetEffect = ScriptAnimationOpenAndPlay('RandomHeadsetEffect.chroma', global.ChromaHeadsetEffect);
+        global.ChromaKeyboardEffect = ScriptAnimationOpenAndPlay('KeyboardParticleAnimation.chroma', global.ChromaKeyboardEffect);
+        global.ChromaKeypadEffect = ScriptAnimationOpenAndPlay('RandomKeypadEffect.chroma', global.ChromaKeypadEffect);
+        global.ChromaMouseEffect = ScriptAnimationOpenAndPlay('RandomMouseEffect.chroma', global.ChromaMouseEffect);
+        global.ChromaMousepadEffect = ScriptAnimationOpenAndPlay('RandomMousepadEffect.chroma', global.ChromaMousepadEffect);
     }
     
     // stop animations
     if (keyboard_check_released(ord('2')))
     {
-        global.ChromaId = global.ChromaChromaLinkEffect;
-        ScriptAnimationStop();
-        
-        global.ChromaId = global.ChromaHeadsetEffect;
-        ScriptAnimationStop();
-        
-        global.ChromaId = global.ChromaKeyboardEffect;
-        ScriptAnimationStop();
-        
-        global.ChromaId = global.ChromaKeypadEffect;
-        ScriptAnimationStop();
-        
-        global.ChromaId = global.ChromaMouseEffect;
-        ScriptAnimationStop();
-        
-        global.ChromaId = global.ChromaMousepadEffect;
-        ScriptAnimationStop();
+        ScriptAnimationStop(global.ChromaChromaLinkEffect);       
+        ScriptAnimationStop(global.ChromaHeadsetEffect);
+        ScriptAnimationStop(global.ChromaKeyboardEffect);
+        ScriptAnimationStop(global.ChromaKeypadEffect);
+        ScriptAnimationStop(global.ChromaMouseEffect);
+        ScriptAnimationStop(global.ChromaMousepadEffect);
     }
 }
 
