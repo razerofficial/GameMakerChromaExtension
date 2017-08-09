@@ -127,11 +127,15 @@ Loads `Chroma` effects so that the animation can be played immediately. Returns 
 extern "C" EXPORT_API double PluginLoadAnimationD(double animationId);
 ```
 
+**PluginUnloadAnimation**
+
 Unloads `Chroma` effects to free up resources. Returns the animation id upon success. Returns -1 upon failure.
 
 ```C++
 extern "C" EXPORT_API double PluginUnloadAnimationD(double animationId);
 ```
+
+**PluginPlayAnimation**
 
 Plays the `Chroma` animation. This will load the animation, if not loaded previously. Returns the animation id upon success. Returns -1 upon failure.
 
@@ -154,6 +158,8 @@ if (global.PluginPlayAnimation == -1)
 return external_call(global.PluginPlayAnimation, animationId);
 ```
 
+**PluginStopAnimation**
+
 Stops animation playback if in progress. Returns the animation id upon success. Returns -1 upon failure.
 
 `DLL`
@@ -174,6 +180,8 @@ if (global.PluginStopAnimation == -1)
 // stop the animation
 return external_call(global.PluginStopAnimation, animationId);
 ```
+
+**PluginCloseAnimation**
 
 Closes the `Chroma` animation to free up resources. Returns the animation id upon success. Returns -1 upon failure. This might be used while authoring effects if there was a change necessitating re-opening the animation. The animation id can no longer be used once closed.
 
