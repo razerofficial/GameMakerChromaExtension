@@ -3,6 +3,7 @@
 **Table of Contents**
 
 * [Frameworks supported](#frameworks-supported)
+* [Getting Started](#getting-started)
 * [Assets](#assets)
 * [API](#api)
 
