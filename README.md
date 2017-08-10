@@ -9,7 +9,7 @@
 
 <a name="frameworks-supported"></a>
 ## Frameworks supported
-- GameMaker 1.4
+- GameMaker 1.4 [download](https://www.yoyogames.com/downloads/gm-studio/release-notes-studio.html)
 - Windows
 
 <a name="getting-started"></a>
