@@ -62,6 +62,9 @@ When the first room loads, run GMS script to set the default global variables. T
 
 ```
 // init globals
+global.PluginIsInitialized = external_define('CChromaEditorLibrary.dll', 'PluginIsInitializedD', dll_cdecl, ty_real, 0);
+global.PluginInit = external_define('CChromaEditorLibrary.dll', 'PluginInitD', dll_cdecl, ty_real, 0);
+global.PluginUninit = external_define('CChromaEditorLibrary.dll', 'PluginUninitD', dll_cdecl, ty_real, 0);
 global.PluginIsDialogOpen = external_define('CChromaEditorLibrary.dll', 'PluginIsDialogOpenD', dll_cdecl, ty_real, 0);
 global.PluginOpenEditorDialog = external_define('CChromaEditorLibrary.dll', 'PluginOpenEditorDialogD', dll_cdecl, ty_real, 1, ty_string);
 global.PluginOpenAnimation = external_define('CChromaEditorLibrary.dll', 'PluginOpenAnimationD', dll_cdecl, ty_real, 1, ty_string);
@@ -81,6 +84,63 @@ Returns true if the plugin has been initialized. Returns false if the plugin is 
 
 ```C++
 extern "C" EXPORT_API double PluginIsInitializedD();
+```
+
+`GMS`
+
+```
+// check if the plugin method has been set globally
+if (global.PluginIsInitialized != -1)
+{
+    // is initialized?
+    return external_call(global.PluginIsInitialized);
+}
+else
+{
+    return false;
+}
+```
+
+**PluginInit**
+
+Initializes the `ChromaSDK`. Returns 0 upon success. Returns -1 upon failure.
+
+`DLL`
+
+```C++
+extern "C" EXPORT_API double PluginInitD();
+```
+
+`GMS`
+
+```
+// check if the plugin method has been set globally
+if (global.PluginInit != -1)
+{
+    // init
+    return external_call(global.PluginInit);
+}
+```
+
+**PluginUninit**
+
+Uninitializes the `ChromaSDK`. Returns 0 upon success. Returns -1 upon failure.
+
+`DLL`
+
+```C++
+extern "C" EXPORT_API double PluginUninitD();
+```
+
+`GMS`
+
+```
+// check if the plugin method has been set globally
+if (global.PluginUninit != -1)
+{
+    // uninit
+    return external_call(global.PluginUninit);
+}
 ```
 
 **PluginIsDialogOpen**
@@ -246,14 +306,6 @@ Closes the `Chroma` animation to free up resources. Returns the animation id upo
 
 ```C++
 extern "C" EXPORT_API double PluginCloseAnimationD(double animationId);
-```
-
-Uninitializes the `ChromaSDK`. Returns 0 upon success. Returns -1 upon failure.
-
-`DLL`
-
-```C++
-extern "C" EXPORT_API double PluginUninitD();
 ```
 
 `GMS`
