@@ -329,7 +329,7 @@ if (global.PluginCloseAnimation != -1)
 
 [ScriptGlobals.gml](scripts/ScriptGlobals.gml) - initializes the globals and sets the DLL extension methods. This script is called from the room object create event.
 
-[ScriptGlobals.gml](scripts/ScriptPluginAnimateOnKeyRelease.gml) - detects key released events to invoke methods. This script is called from the room object released keyboard event.
+[ScriptPluginAnimateOnKeyRelease.gml](scripts/ScriptPluginAnimateOnKeyRelease.gml) - detects key released events to invoke methods. This script is called from the room object released keyboard event.
 
 [ScriptAnimationOpenAndPlay.gml](scripts/ScriptAnimationOpenAndPlay.gml) - opens and plays the animation passed to the function.
 
