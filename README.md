@@ -58,15 +58,17 @@ if (os_type == os_windows)
 }
 ```
 
-When the first room loads, run GMS script to set the default values for some global variables. These globals will be used to call `Chroma` DLL methods.
+When the first room loads, run GMS script to set the default global variables. These globals will be used to invoke `Chroma` DLL methods.
 
 ```
 // init globals
-global.PluginIsDialogOpen = -1;
-global.PluginOpenEditorDialog = -1;
-global.PluginOpenAnimation = -1;
-global.PluginPlayAnimation = -1;
-global.PluginStopAnimation = -1;
+global.PluginIsDialogOpen = external_define('CChromaEditorLibrary.dll', 'PluginIsDialogOpenD', dll_cdecl, ty_real, 0);
+global.PluginOpenEditorDialog = external_define('CChromaEditorLibrary.dll', 'PluginOpenEditorDialogD', dll_cdecl, ty_real, 1, ty_string);
+global.PluginOpenAnimation = external_define('CChromaEditorLibrary.dll', 'PluginOpenAnimationD', dll_cdecl, ty_real, 1, ty_string);
+global.PluginPlayAnimation = external_define('CChromaEditorLibrary.dll', 'PluginPlayAnimationD', dll_cdecl, ty_real, 1, ty_real);
+global.PluginLoadAnimation = external_define('CChromaEditorLibrary.dll', 'PluginLoadAnimationD', dll_cdecl, ty_real, 1, ty_real);
+global.PluginStopAnimation = external_define('CChromaEditorLibrary.dll', 'PluginStopAnimationD', dll_cdecl, ty_real, 1, ty_real);
+global.PluginCloseAnimation = external_define('CChromaEditorLibrary.dll', 'PluginCloseAnimationD', dll_cdecl, ty_real, 1, ty_real);
 ```
 
 The API has various methods with the `D` suffix where `double` return-type/parameters were used. This is to support engines like `GameMaker` which have a limited number of data-types.
@@ -74,6 +76,8 @@ The API has various methods with the `D` suffix where `double` return-type/param
 **PluginIsInitialized**
 
 Returns true if the plugin has been initialized. Returns false if the plugin is uninitialized.
+
+`DLL`
 
 ```C++
 extern "C" EXPORT_API double PluginIsInitializedD();
@@ -83,19 +87,51 @@ extern "C" EXPORT_API double PluginIsInitializedD();
 
 The editor dialog is a non-blocking modal window, this method returns true if the modal window is open, otherwise false.
 
+`DLL`
+
 ```C++
 extern "C" EXPORT_API double PluginIsDialogOpenD();
+```
+
+`GMS`
+
+```
+// check if the plugin method has been set globally
+if (global.PluginIsDialogOpen != -1 && global.PluginOpenEditorDialog != -1)
+{
+    // edit animation
+    if (external_call(global.PluginIsDialogOpen) == 0.0)
+    {
+        external_call(global.PluginOpenEditorDialog, argument0);
+    }
+}
 ```
 
 **PluginOpenEditorDialog**
 
 Opens a `Chroma` animation file with the `.chroma` extension. Returns zero upon success. Returns -1 if there was a failure.
 
+`DLL`
+
 ```C++
 extern "C" EXPORT_API double PluginOpenEditorDialogD(char* path);
 ```
 
-![image_1](images/image_1.png)
+`GMS`
+
+```
+// check if the plugin method has been set globally
+if (global.PluginIsDialogOpen != -1 && global.PluginOpenEditorDialog != -1)
+{
+    // edit animation
+    if (external_call(global.PluginIsDialogOpen) == 0.0)
+    {
+        external_call(global.PluginOpenEditorDialog, argument0);
+    }
+}
+```
+
+![image_5](images/image_5.png)
 
 **PluginOpenAnimation**
 
@@ -111,29 +147,53 @@ extern "C" EXPORT_API double PluginOpenAnimationD(char* path);
 
 ```
 // check if the plugin method has been set globally
-if (global.PluginOpenAnimation == -1)
+if (global.PluginOpenAnimation != -1)
 {
-    global.PluginOpenAnimation = external_define('CChromaEditorLibrary.dll', 'PluginOpenAnimationD', dll_cdecl, ty_real, 1, ty_string);
+    // open animation
+    return external_call(global.PluginOpenAnimation, 'RandomKeyboardEffect.chroma');
 }
-
-// open animation
-return external_call(global.PluginOpenAnimation, 'RandomChromaLinkEffect.chroma');
 ```
 
 **PluginLoadAnimation**
 
 Loads `Chroma` effects so that the animation can be played immediately. Returns the animation id upon success. Returns -1 upon failure.
 
+`DLL`
+
 ```C++
 extern "C" EXPORT_API double PluginLoadAnimationD(double animationId);
+```
+
+`GMS`
+
+```
+// check if the plugin method has been set globally
+if (global.PluginLoadAnimation != -1)
+{
+    // load animation
+    return external_call(global.PluginLoadAnimation, animationId);
+}
 ```
 
 **PluginUnloadAnimation**
 
 Unloads `Chroma` effects to free up resources. Returns the animation id upon success. Returns -1 upon failure.
 
+`DLL`
+
 ```C++
 extern "C" EXPORT_API double PluginUnloadAnimationD(double animationId);
+```
+
+`GMS`
+
+```
+// check if the plugin method has been set globally
+if (global.PluginUnloadAnimation != -1)
+{
+    // play animation
+    return external_call(global.PluginUnloadAnimation, animationId);
+}
 ```
 
 **PluginPlayAnimation**
@@ -150,13 +210,11 @@ extern "C" EXPORT_API double PluginPlayAnimationD(double animationId);
 
 ```
 // check if the plugin method has been set globally
-if (global.PluginPlayAnimation == -1)
+if (global.PluginPlayAnimation != -1)
 {
-    global.PluginPlayAnimation = external_define('CChromaEditorLibrary.dll', 'PluginPlayAnimationD', dll_cdecl, ty_real, 1, ty_real);
+    // play animation
+    return external_call(global.PluginPlayAnimation, animationId);
 }
-
-// play animation
-return external_call(global.PluginPlayAnimation, animationId);
 ```
 
 **PluginStopAnimation**
@@ -173,18 +231,18 @@ extern "C" EXPORT_API double PluginStopAnimationD(double animationId);
 
 ```
 // check if the plugin method has been set globally
-if (global.PluginStopAnimation == -1)
+if (global.PluginStopAnimation != -1)
 {
-    global.PluginStopAnimation = external_define('CChromaEditorLibrary.dll', 'PluginStopAnimationD', dll_cdecl, ty_real, 1, ty_real);
+    // stop the animation
+    return external_call(global.PluginStopAnimation, animationId);
 }
-
-// stop the animation
-return external_call(global.PluginStopAnimation, animationId);
 ```
 
 **PluginCloseAnimation**
 
 Closes the `Chroma` animation to free up resources. Returns the animation id upon success. Returns -1 upon failure. This might be used while authoring effects if there was a change necessitating re-opening the animation. The animation id can no longer be used once closed.
+
+`DLL`
 
 ```C++
 extern "C" EXPORT_API double PluginCloseAnimationD(double animationId);
@@ -192,6 +250,19 @@ extern "C" EXPORT_API double PluginCloseAnimationD(double animationId);
 
 Uninitializes the `ChromaSDK`. Returns 0 upon success. Returns -1 upon failure.
 
+`DLL`
+
 ```C++
 extern "C" EXPORT_API double PluginUninitD();
+```
+
+`GMS`
+
+```
+// check if the plugin method has been set globally
+if (global.PluginCloseAnimation != -1)
+{
+    // close animation and free resources
+    return external_call(global.PluginCloseAnimation, animationId);
+}
 ```
