@@ -323,16 +323,16 @@ if (global.PluginCloseAnimation != -1)
 <a name="examples"></a>
 ## Examples
 
-[ScriptDrawUI.gml](blob/master/scripts/ScriptDrawUI.gml) - displays the keyboard shortcuts for the example. This script is called from the room object draw event.
+[ScriptDrawUI.gml](scripts/ScriptDrawUI.gml) - displays the keyboard shortcuts for the example. This script is called from the room object draw event.
 
 ![image_6](images/image_6.png)
 
-[ScriptGlobals.gml](blob/master/scripts/ScriptGlobals.gml) - initializes the globals and sets the DLL extension methods. This script is called from the room object create event.
+[ScriptGlobals.gml](scripts/ScriptGlobals.gml) - initializes the globals and sets the DLL extension methods. This script is called from the room object create event.
 
-[ScriptGlobals.gml](blob/master/scripts/ScriptPluginAnimateOnKeyRelease.gml) - detects key released events to invoke methods. This script is called from the room object released keyboard event.
+[ScriptGlobals.gml](scripts/ScriptPluginAnimateOnKeyRelease.gml) - detects key released events to invoke methods. This script is called from the room object released keyboard event.
 
-[ScriptAnimationOpenAndPlay.gml](blob/master/scripts/ScriptAnimationOpenAndPlay.gml) - opens and plays the animation passed to the function.
+[ScriptAnimationOpenAndPlay.gml](scripts/ScriptAnimationOpenAndPlay.gml) - opens and plays the animation passed to the function.
 
-[ScriptAnimationStop.gml](blob/master/scripts/ScriptAnimationStop.gml) - stops the animation passed to the function.
+[ScriptAnimationStop.gml](scripts/ScriptAnimationStop.gml) - stops the animation passed to the function.
 
-[ScriptUninit.gml](blob/master/scripts/ScriptUninit.gml) - uninitialized the extension before exiting
+[ScriptUninit.gml](scripts/ScriptUninit.gml) - uninitialized the extension before exiting
