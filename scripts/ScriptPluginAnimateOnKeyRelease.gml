@@ -27,5 +27,12 @@ if (os_type == os_windows)
     {
         ScriptAnimationEdit('KeyboardParticleAnimation.chroma');
     }
+    
+    // exit
+    if (keyboard_check_released(vk_escape))
+    {
+        ScriptUninit();
+        game_end();
+    }
 }
 

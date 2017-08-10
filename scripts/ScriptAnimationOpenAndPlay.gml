@@ -4,28 +4,32 @@ chromaId = argument1;
 
 if (os_type == os_windows)
 {
-    if (global.PluginOpenAnimation == -1)
+    // initialize SDK
+    if (global.PluginIsInitialized != -1 && global.PluginInit != -1)
     {
-        //show_debug_message("****** GET PLUGIN METHOD: PluginOpenAnimation *****");
-        global.PluginOpenAnimation = external_define('CChromaEditorLibrary.dll', 'PluginOpenAnimationD', dll_cdecl, ty_real, 1, ty_string);
+        result = external_call(global.PluginIsInitialized);
+        show_debug_message('PluginIsInitialized result='+string(result));
+        if (result == 0.0)
+        {
+            // init
+            result = external_call(global.PluginInit);
+            show_debug_message('PluginInit result='+string(result));
+        }
     }
     
-    if (global.PluginPlayAnimation == -1)
-    {
-        //show_debug_message("****** GET PLUGIN METHOD: PluginPlayAnimation *****");
-        global.PluginPlayAnimation = external_define('CChromaEditorLibrary.dll', 'PluginPlayAnimationD', dll_cdecl, ty_real, 1, ty_real);
-    }
-    
-    // open animation
-    if (chromaId == -1)
+    // open animation, chromaId will be -1 before it's opened
+    if (global.PluginOpenAnimation != -1 && chromaId == -1)
     {
         chromaId = external_call(global.PluginOpenAnimation, argument0);
         show_debug_message('PluginOpenAnimation result='+string(chromaId));
     }
 
-    // play animation
-    result = external_call(global.PluginPlayAnimation, chromaId);
-    show_debug_message('PluginPlayAnimation result='+string(result));
+    // play animation, chromaId will be >= 0 when opened
+    if (global.PluginPlayAnimation != -1 && chromaId != -1)
+    {
+        result = external_call(global.PluginPlayAnimation, chromaId);
+        show_debug_message('PluginPlayAnimation result='+string(result));
+    }
 }
 
 return result;
