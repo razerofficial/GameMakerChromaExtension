@@ -189,6 +189,7 @@
     <script>scripts\ScriptAnimationOpenAndPlay.gml</script>
     <script>scripts\ScriptAnimationStop.gml</script>
     <script>scripts\ScriptUninit.gml</script>
+    <script>scripts\ScriptDrawUI.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\ObjectChromaPlayAnimation</object>
