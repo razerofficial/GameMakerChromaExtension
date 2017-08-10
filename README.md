@@ -38,6 +38,10 @@
 
 ![image_5](images/image_5.png)
 
+7 In order to see the lighting animations play, use the `File->Create Application` menu item to create a `Windows` application. After the installer completes, the application will play `Chroma` animations.
+ 
+![image_7](images/image_7.png)
+
 <a name="assets"></a>
 ## Assets
 
