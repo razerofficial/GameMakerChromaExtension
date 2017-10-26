@@ -1,8 +1,13 @@
 RZKEY_W = "515";
 RZKEY_A = "770";
+RZKEY_I = "521";
+RZKEY_J = "776";
+RZKEY_K = "777";
+RZKEY_L = "778";
 RZKEY_S = "771";
 RZKEY_D = "772";
 RZKEY_ENTER = "782";
+red = "255";
 
 if (os_type == os_windows)
 {
@@ -69,6 +74,10 @@ if (os_type == os_windows)
             ScriptCopyKeyColorName('Fire_Keyboard.chroma', 'Random_Keyboard.chroma', frameIndex, RZKEY_S);
             ScriptCopyKeyColorName('Fire_Keyboard.chroma', 'Random_Keyboard.chroma', frameIndex, RZKEY_D);
             ScriptCopyKeyColorName('Fire_Keyboard.chroma', 'Random_Keyboard.chroma', frameIndex, RZKEY_ENTER);
+            ScriptSetKeyColorName('Random_Keyboard.chroma', frameIndex, RZKEY_I, red);
+            ScriptSetKeyColorName('Random_Keyboard.chroma', frameIndex, RZKEY_J, red);
+            ScriptSetKeyColorName('Random_Keyboard.chroma', frameIndex, RZKEY_K, red);
+            ScriptSetKeyColorName('Random_Keyboard.chroma', frameIndex, RZKEY_L, red);
         }
         ScriptPlayAnimationName('Random_Keyboard.chroma', 1.0);
     }

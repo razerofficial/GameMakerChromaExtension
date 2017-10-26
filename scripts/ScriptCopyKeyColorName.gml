@@ -3,7 +3,7 @@ if (os_type == os_windows)
 {
     if (global.PluginCopyKeyColorName != -1)
     {
-        external_call(global.PluginCopyKeyColorName, argument0, argument1, argument2, argument3);
+        external_call(global.PluginCopyKeyColorName, argument0, argument1, string(argument2), argument3);
     }
 }
 

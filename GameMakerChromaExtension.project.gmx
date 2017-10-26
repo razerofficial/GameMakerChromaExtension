@@ -299,6 +299,7 @@
     <script>scripts\ScriptGetFrameCountName.gml</script>
     <script>scripts\ScriptCopyKeyColorName.gml</script>
     <script>scripts\ScriptPlayAnimationName.gml</script>
+    <script>scripts\ScriptSetKeyColorName.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\ObjectHandleInput</object>
