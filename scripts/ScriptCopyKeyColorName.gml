@@ -1,4 +1,4 @@
-show_debug_message("PluginCopyKeyColorName: source="+argument0+" target="+argument1+" frameId="+string(argument2)+" rzkey="+string(argument3));
+show_debug_message("PluginCopyKeyColorName: source="+argument0+" target="+argument1+" frameId="+string(argument2)+" rzkey="+argument3);
 if (os_type == os_windows)
 {
     if (global.PluginCopyKeyColorName != -1)
