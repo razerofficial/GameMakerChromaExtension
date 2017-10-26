@@ -1,4 +1,4 @@
-show_debug_message("ScriptAnimationEdit: path="+argument0);
+show_debug_message("PluginOpenEditorDialog: path="+argument0);
 if (os_type == os_windows)
 {
     if (global.PluginIsDialogOpen != -1 && global.PluginOpenEditorDialog != -1)

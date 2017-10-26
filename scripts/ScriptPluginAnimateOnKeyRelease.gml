@@ -1,31 +1,60 @@
 if (os_type == os_windows)
 {
-    // open and play animations
+    // play composite
     if (keyboard_check_released(ord('1')))
     {
-        global.ChromaChromaLinkEffect = ScriptAnimationOpenAndPlay('RandomChromaLinkEffect.chroma', global.ChromaChromaLinkEffect);
-        global.ChromaHeadsetEffect = ScriptAnimationOpenAndPlay('RandomHeadsetEffect.chroma', global.ChromaHeadsetEffect);
-        global.ChromaKeyboardEffect = ScriptAnimationOpenAndPlay('RandomKeyboardEffect.chroma', global.ChromaKeyboardEffect);
-        global.ChromaKeypadEffect = ScriptAnimationOpenAndPlay('RandomKeypadEffect.chroma', global.ChromaKeypadEffect);
-        global.ChromaMouseEffect = ScriptAnimationOpenAndPlay('RandomMouseEffect.chroma', global.ChromaMouseEffect);
-        global.ChromaMousepadEffect = ScriptAnimationOpenAndPlay('RandomMousepadEffect.chroma', global.ChromaMousepadEffect);
+        ScriptPlayComposite('Random', 0.0);
     }
     
-    // stop animations
+    // loop composite
     if (keyboard_check_released(ord('2')))
     {
-        ScriptAnimationStop(global.ChromaChromaLinkEffect);       
-        ScriptAnimationStop(global.ChromaHeadsetEffect);
-        ScriptAnimationStop(global.ChromaKeyboardEffect);
-        ScriptAnimationStop(global.ChromaKeypadEffect);
-        ScriptAnimationStop(global.ChromaMouseEffect);
-        ScriptAnimationStop(global.ChromaMousepadEffect);
+        ScriptPlayComposite('Random', 1.0);
+    }
+    
+    // stop composite
+    if (keyboard_check_released(ord('3')))
+    {
+        ScriptStopComposite('Random');
+    }
+    
+    // pause animations
+    if (keyboard_check_released(ord('4')))
+    {
+        ScriptPauseAnimationName('Random_ChromaLink.chroma');
+        ScriptPauseAnimationName('Random_Headset.chroma');
+        ScriptPauseAnimationName('Random_Keyboard.chroma');
+        ScriptPauseAnimationName('Random_Keypad.chroma');
+        ScriptPauseAnimationName('Random_Mouse.chroma');
+        ScriptPauseAnimationName('Random_Mousepad.chroma');
+    }
+    
+    // resume animations
+    if (keyboard_check_released(ord('5')))
+    {
+        ScriptResumeAnimationName('Random_ChromaLink.chroma', 0.0);
+        ScriptResumeAnimationName('Random_Headset.chroma', 0.0);
+        ScriptResumeAnimationName('Random_Keyboard.chroma', 0.0);
+        ScriptResumeAnimationName('Random_Keypad.chroma', 0.0);
+        ScriptResumeAnimationName('Random_Mouse.chroma', 0.0);
+        ScriptResumeAnimationName('Random_Mousepad.chroma', 0.0);
+    }
+    
+    // resume loop animations
+    if (keyboard_check_released(ord('6')))
+    {
+        ScriptResumeAnimationName('Random_ChromaLink.chroma', 1.0);
+        ScriptResumeAnimationName('Random_Headset.chroma', 1.0);
+        ScriptResumeAnimationName('Random_Keyboard.chroma', 1.0);
+        ScriptResumeAnimationName('Random_Keypad.chroma', 1.0);
+        ScriptResumeAnimationName('Random_Mouse.chroma', 1.0);
+        ScriptResumeAnimationName('Random_Mousepad.chroma', 1.0);
     }
     
     // edit animation
-    if (keyboard_check_released(ord('3')))
+    if (keyboard_check_released(ord('E')))
     {
-        ScriptAnimationEdit('KeyboardParticleAnimation.chroma');
+        ScriptOpenEditorDialog('KeyboardParticleAnimation.chroma');
     }
     
     // exit

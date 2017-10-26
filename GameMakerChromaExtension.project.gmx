@@ -3,7 +3,7 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="19" name="datafiles">
+  <datafiles number="25" name="datafiles">
     <datafile>
       <name>CChromaEditorLibrary.dll</name>
       <exists>-1</exists>
@@ -73,7 +73,7 @@
       <filename>KeyboardParticleAnimation2.chroma</filename>
     </datafile>
     <datafile>
-      <name>RandomChromaLinkEffect.chroma</name>
+      <name>Random_ChromaLink.chroma</name>
       <exists>-1</exists>
       <size>322</size>
       <exportAction>2</exportAction>
@@ -87,10 +87,10 @@
           <CopyToMask>9223372036854775807</CopyToMask>
         </Config>
       </ConfigOptions>
-      <filename>RandomChromaLinkEffect.chroma</filename>
+      <filename>Random_ChromaLink.chroma</filename>
     </datafile>
     <datafile>
-      <name>RandomHeadsetEffect.chroma</name>
+      <name>Random_Headset.chroma</name>
       <exists>-1</exists>
       <size>322</size>
       <exportAction>2</exportAction>
@@ -104,10 +104,10 @@
           <CopyToMask>9223372036854775807</CopyToMask>
         </Config>
       </ConfigOptions>
-      <filename>RandomHeadsetEffect.chroma</filename>
+      <filename>Random_Headset.chroma</filename>
     </datafile>
     <datafile>
-      <name>RandomKeyboardEffect.chroma</name>
+      <name>Random_Keyboard.chroma</name>
       <exists>-1</exists>
       <size>7458</size>
       <exportAction>2</exportAction>
@@ -121,10 +121,10 @@
           <CopyToMask>9223372036854775807</CopyToMask>
         </Config>
       </ConfigOptions>
-      <filename>RandomKeyboardEffect.chroma</filename>
+      <filename>Random_Keyboard.chroma</filename>
     </datafile>
     <datafile>
-      <name>RandomKeypadEffect.chroma</name>
+      <name>Random_Keypad.chroma</name>
       <exists>-1</exists>
       <size>1186</size>
       <exportAction>2</exportAction>
@@ -138,10 +138,10 @@
           <CopyToMask>9223372036854775807</CopyToMask>
         </Config>
       </ConfigOptions>
-      <filename>RandomKeypadEffect.chroma</filename>
+      <filename>Random_Keypad.chroma</filename>
     </datafile>
     <datafile>
-      <name>RandomMouseEffect.chroma</name>
+      <name>Random_Mouse.chroma</name>
       <exists>-1</exists>
       <size>3082</size>
       <exportAction>2</exportAction>
@@ -155,10 +155,10 @@
           <CopyToMask>9223372036854775807</CopyToMask>
         </Config>
       </ConfigOptions>
-      <filename>RandomMouseEffect.chroma</filename>
+      <filename>Random_Mouse.chroma</filename>
     </datafile>
     <datafile>
-      <name>RandomMousepadEffect.chroma</name>
+      <name>Random_Mousepad.chroma</name>
       <exists>-1</exists>
       <size>970</size>
       <exportAction>2</exportAction>
@@ -172,7 +172,7 @@
           <CopyToMask>9223372036854775807</CopyToMask>
         </Config>
       </ConfigOptions>
-      <filename>RandomMousepadEffect.chroma</filename>
+      <filename>Random_Mousepad.chroma</filename>
     </datafile>
   </datafiles>
   <NewExtensions>
@@ -183,16 +183,19 @@
   <backgrounds name="background"/>
   <paths name="paths"/>
   <scripts name="scripts">
-    <script>scripts\ScriptAnimationEdit.gml</script>
+    <script>scripts\ScriptOpenEditorDialog.gml</script>
     <script>scripts\ScriptPluginAnimateOnKeyRelease.gml</script>
     <script>scripts\ScriptGlobals.gml</script>
-    <script>scripts\ScriptAnimationOpenAndPlay.gml</script>
-    <script>scripts\ScriptAnimationStop.gml</script>
+    <script>scripts\ScriptPlayComposite.gml</script>
+    <script>scripts\ScriptStopComposite.gml</script>
     <script>scripts\ScriptUninit.gml</script>
     <script>scripts\ScriptDrawUI.gml</script>
+    <script>scripts\ScriptInit.gml</script>
+    <script>scripts\ScriptPauseAnimationName.gml</script>
+    <script>scripts\ScriptResumeAnimationName.gml</script>
   </scripts>
   <objects name="objects">
-    <object>objects\ObjectChromaPlayAnimation</object>
+    <object>objects\ObjectHandleInput</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\ExampleRoom</room>
