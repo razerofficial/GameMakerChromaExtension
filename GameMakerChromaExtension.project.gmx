@@ -3,7 +3,7 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="25" name="datafiles">
+  <datafiles number="31" name="datafiles">
     <datafile>
       <name>CChromaEditorLibrary.dll</name>
       <exists>-1</exists>
@@ -174,6 +174,108 @@
       </ConfigOptions>
       <filename>Random_Mousepad.chroma</filename>
     </datafile>
+    <datafile>
+      <name>Fire_ChromaLink.chroma</name>
+      <exists>-1</exists>
+      <size>346</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>Fire_ChromaLink.chroma</filename>
+    </datafile>
+    <datafile>
+      <name>Fire_Headset.chroma</name>
+      <exists>-1</exists>
+      <size>346</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>Fire_Headset.chroma</filename>
+    </datafile>
+    <datafile>
+      <name>Fire_Keyboard.chroma</name>
+      <exists>-1</exists>
+      <size>7458</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>Fire_Keyboard.chroma</filename>
+    </datafile>
+    <datafile>
+      <name>Fire_Keypad.chroma</name>
+      <exists>-1</exists>
+      <size>1186</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>Fire_Keypad.chroma</filename>
+    </datafile>
+    <datafile>
+      <name>Fire_Mouse.chroma</name>
+      <exists>-1</exists>
+      <size>3594</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>Fire_Mouse.chroma</filename>
+    </datafile>
+    <datafile>
+      <name>Fire_Mousepad.chroma</name>
+      <exists>-1</exists>
+      <size>906</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>Fire_Mousepad.chroma</filename>
+    </datafile>
   </datafiles>
   <NewExtensions>
     <extension index="0">extensions\ChromaSDK</extension>
@@ -193,6 +295,10 @@
     <script>scripts\ScriptInit.gml</script>
     <script>scripts\ScriptPauseAnimationName.gml</script>
     <script>scripts\ScriptResumeAnimationName.gml</script>
+    <script>scripts\ScriptCloseAnimationName.gml</script>
+    <script>scripts\ScriptGetFrameCountName.gml</script>
+    <script>scripts\ScriptCopyKeyColorName.gml</script>
+    <script>scripts\ScriptPlayAnimationName.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\ObjectHandleInput</object>

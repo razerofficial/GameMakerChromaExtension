@@ -1,3 +1,5 @@
+RZKEY_W = 1003;
+
 if (os_type == os_windows)
 {
     // play composite
@@ -49,6 +51,25 @@ if (os_type == os_windows)
         ScriptResumeAnimationName('Random_Keypad.chroma', 1.0);
         ScriptResumeAnimationName('Random_Mouse.chroma', 1.0);
         ScriptResumeAnimationName('Random_Mousepad.chroma', 1.0);
+    }
+    
+    // show hotkeys
+    if (keyboard_check_released(ord('7')))
+    {
+        ScriptCloseAnimationName('Random_Keyboard.chroma');
+        frameCount = ScriptGetFrameCountName('Random_Keyboard.chroma');
+        for (frameIndex = 0; frameIndex < frameCount; ++frameIndex)
+        {
+            ScriptCopyKeyColorName('Fire_Keyboard.chroma', 'Random_Keyboard.chroma', frameIndex, RZKEY_W);
+        }
+        ScriptPlayAnimationName('Random_Keyboard.chroma', 1.0);
+    }
+    
+    // hide hotkeys
+    if (keyboard_check_released(ord('8')))
+    {
+        ScriptCloseAnimationName('Random_Keyboard.chroma');
+        ScriptPlayAnimationName('Random_Keyboard.chroma', 1.0);
     }
     
     // edit animation
