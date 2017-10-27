@@ -109,7 +109,7 @@
         <arguments>
           <argument>
             <kind>9</kind>
-            <script>ScriptPluginAnimateOnKeyRelease</script>
+            <script>ScriptAnimateOnKeyRelease</script>
           </argument>
           <argument>
             <kind>0</kind>

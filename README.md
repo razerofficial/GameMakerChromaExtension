@@ -68,6 +68,21 @@ Add `Chroma` animation files to the project's `Included Files` to make the anima
 <a name="api"></a>
 ## API
 
+* [ScriptChromaCloseAnimationName](#ScriptChromaCloseAnimationName)
+* [ScriptChromaInit](#ScriptChromaInit)
+* [ScriptChromaCopyKeyColorName](#ScriptChromaCopyKeyColorName)
+* [ScriptChromaGetFrameCountName](#ScriptChromaGetFrameCountName)
+* [ScriptChromaInit](#ScriptChromaInit)
+* [ScriptChromaOpenEditorDialog](#ScriptChromaOpenEditorDialog)
+* [ScriptChromaPauseAnimationName](#ScriptChromaPauseAnimationName)
+* [ScriptChromaPlayAnimationName](#ScriptChromaPlayAnimationName)
+* [ScriptChromaPlayComposite](#ScriptChromaPlayComposite)
+* [ScriptChromaResumeAnimationName](#ScriptChromaResumeAnimationName)
+* [ScriptChromaSetKeyColorName](#ScriptChromaSetKeyColorName)
+* [ScriptChromaStopComposite](#ScriptChromaStopComposite)
+* [ScriptChromaUninit](#ScriptChromaUninit)
+
+
 The extension methods are only available on the `Windows` platform. Use `GMS` to detect the `Windows` os.
 
 ```
@@ -77,280 +92,218 @@ if (os_type == os_windows)
 }
 ```
 
-When the first room loads, run GMS script to set the default global variables. These globals will be used to invoke `Chroma` DLL methods.
+When the first room loads, run GMS script to set the default global variables. These globals are what connects the `Chroma` DLL methods.
 
 ```
-// init globals
-global.PluginIsInitialized = external_define('CChromaEditorLibrary.dll', 'PluginIsInitializedD', dll_cdecl, ty_real, 0);
-global.PluginInit = external_define('CChromaEditorLibrary.dll', 'PluginInitD', dll_cdecl, ty_real, 0);
-global.PluginUninit = external_define('CChromaEditorLibrary.dll', 'PluginUninitD', dll_cdecl, ty_real, 0);
-global.PluginIsDialogOpen = external_define('CChromaEditorLibrary.dll', 'PluginIsDialogOpenD', dll_cdecl, ty_real, 0);
-global.PluginOpenEditorDialog = external_define('CChromaEditorLibrary.dll', 'PluginOpenEditorDialogD', dll_cdecl, ty_real, 1, ty_string);
-global.PluginOpenAnimation = external_define('CChromaEditorLibrary.dll', 'PluginOpenAnimationD', dll_cdecl, ty_real, 1, ty_string);
-global.PluginPlayAnimation = external_define('CChromaEditorLibrary.dll', 'PluginPlayAnimationD', dll_cdecl, ty_real, 1, ty_real);
-global.PluginLoadAnimation = external_define('CChromaEditorLibrary.dll', 'PluginLoadAnimationD', dll_cdecl, ty_real, 1, ty_real);
-global.PluginStopAnimation = external_define('CChromaEditorLibrary.dll', 'PluginStopAnimationD', dll_cdecl, ty_real, 1, ty_real);
-global.PluginCloseAnimation = external_define('CChromaEditorLibrary.dll', 'PluginCloseAnimationD', dll_cdecl, ty_real, 1, ty_real);
+if (os_type == os_windows)
+{
+    // init globals
+    global.PluginIsInitialized = external_define('CChromaEditorLibrary.dll', 'PluginIsInitializedD', dll_cdecl, ty_real, 0);
+    global.PluginInit = external_define('CChromaEditorLibrary.dll', 'PluginInitD', dll_cdecl, ty_real, 0);
+    global.PluginUninit = external_define('CChromaEditorLibrary.dll', 'PluginUninitD', dll_cdecl, ty_real, 0);
+    global.PluginIsDialogOpen = external_define('CChromaEditorLibrary.dll', 'PluginIsDialogOpenD', dll_cdecl, ty_real, 0);
+    global.PluginOpenEditorDialog = external_define('CChromaEditorLibrary.dll', 'PluginOpenEditorDialogD', dll_cdecl, ty_real, 1, ty_string);
+    global.PluginOpenAnimation = external_define('CChromaEditorLibrary.dll', 'PluginOpenAnimationD', dll_cdecl, ty_real, 1, ty_string);
+    global.PluginPlayAnimation = external_define('CChromaEditorLibrary.dll', 'PluginPlayAnimationD', dll_cdecl, ty_real, 1, ty_real);
+    global.PluginLoadAnimation = external_define('CChromaEditorLibrary.dll', 'PluginLoadAnimationD', dll_cdecl, ty_real, 1, ty_real);
+    global.PluginStopAnimation = external_define('CChromaEditorLibrary.dll', 'PluginStopAnimationD', dll_cdecl, ty_real, 1, ty_real);
+    global.PluginCloseAnimation = external_define('CChromaEditorLibrary.dll', 'PluginCloseAnimationD', dll_cdecl, ty_real, 1, ty_real);
+    global.PluginPlayComposite = external_define('CChromaEditorLibrary.dll', 'PluginPlayCompositeD', dll_cdecl, ty_real, 2, ty_string, ty_real);
+    global.PluginStopComposite = external_define('CChromaEditorLibrary.dll', 'PluginStopCompositeD', dll_cdecl, ty_real, 1, ty_string);
+    global.PluginPauseAnimationName = external_define('CChromaEditorLibrary.dll', 'PluginPauseAnimationNameD', dll_cdecl, ty_real, 1, ty_string);
+    global.PluginResumeAnimationName = external_define('CChromaEditorLibrary.dll', 'PluginResumeAnimationNameD', dll_cdecl, ty_real, 2, ty_string, ty_real);
+    global.PluginGetFrameCountName = external_define('CChromaEditorLibrary.dll', 'PluginGetFrameCountNameD', dll_cdecl, ty_real, 1, ty_string);
+    global.PluginSetKeyColorName = external_define('CChromaEditorLibrary.dll', 'PluginSetKeyColorNameD', dll_cdecl, ty_real, 4, ty_string, ty_string, ty_string, ty_string);
+    global.PluginCopyKeyColorName = external_define('CChromaEditorLibrary.dll', 'PluginCopyKeyColorNameD', dll_cdecl, ty_real, 4, ty_string, ty_string, ty_string, ty_string);
+    global.PluginCloseAnimationName = external_define('CChromaEditorLibrary.dll', 'PluginCloseAnimationNameD', dll_cdecl, ty_real, 1, ty_string);
+    global.PluginPlayAnimationName = external_define('CChromaEditorLibrary.dll', 'PluginPlayAnimationNameD', dll_cdecl, ty_real, 2, ty_string, ty_real);
+}
 ```
 
 The API has various methods with the `D` suffix where `double` return-type/parameters were used. This is to support engines like `GameMaker` which have a limited number of data-types.
 
-**PluginIsInitialized**
 
-Returns true if the plugin has been initialized. Returns false if the plugin is uninitialized.
+<a name="ScriptChromaCloseAnimationName"></a>
+**ScriptChromaCloseAnimationName**
 
-`DLL`
-
-```C++
-extern "C" EXPORT_API double PluginIsInitializedD();
-```
-
-`GMS`
+The helper script closes an animation to reload from disk. The method takes a string parameter of the animation name.
 
 ```
-// check if the plugin method has been set globally
-if (global.PluginIsInitialized != -1)
-{
-    // is initialized?
-    return external_call(global.PluginIsInitialized);
-}
-else
-{
-    return false;
-}
+animation = 'Random_Keyboard.chroma';
+ScriptChromaCloseAnimationName(animation);
 ```
 
-**PluginInit**
 
-Initializes the `ChromaSDK`. Returns 0 upon success. Returns -1 upon failure.
+<a name="ScriptChromaCopyKeyColorName"></a>
+**ScriptChromaCopyKeyColorName**
 
-`DLL`
-
-```C++
-extern "C" EXPORT_API double PluginInitD();
-```
-
-`GMS`
+The helper script copies the key color from a source animation to the target animation for the key of the animation frame. The source and target animation are strings. The frame index is a number from 0 to the frame count. The key is a string of the key number.
 
 ```
-// check if the plugin method has been set globally
-if (global.PluginInit != -1)
-{
-    // init
-    return external_call(global.PluginInit);
-}
+sourceAnimation = 'Fire_Keyboard.chroma';
+targetAnimation = 'Random_Keyboard.chroma';
+frameIndex = 0;
+RZKEY_W = "515";
+key = RZKEY_W;
+ScriptChromaCopyKeyColorName(sourceAnimation, targetAnimation, frameIndex, key);
 ```
 
-**PluginUninit**
 
-Uninitializes the `ChromaSDK`. Returns 0 upon success. Returns -1 upon failure.
+<a name="ScriptChromaGetFrameCountName"></a>
+**ScriptChromaGetFrameCountName**
 
-`DLL`
-
-```C++
-extern "C" EXPORT_API double PluginUninitD();
-```
-
-`GMS`
+The helper script returns the number of animation frames. The animation parameter is a string.
 
 ```
-// check if the plugin method has been set globally
-if (global.PluginUninit != -1)
-{
-    // uninit
-    return external_call(global.PluginUninit);
-}
+animation = 'Random_Keyboard.chroma';
+frameCount = ScriptChromaGetFrameCountName(animation);
 ```
 
-**PluginIsDialogOpen**
 
-The editor dialog is a non-blocking modal window, this method returns true if the modal window is open, otherwise false.
+<a name="ScriptChromaInit"></a>
+**ScriptChromaInit**
 
-`DLL`
-
-```C++
-extern "C" EXPORT_API double PluginIsDialogOpenD();
-```
-
-`GMS`
+The helper script initializes the `ChromaSDK` and has no parameters.
 
 ```
-// check if the plugin method has been set globally
-if (global.PluginIsDialogOpen != -1 && global.PluginOpenEditorDialog != -1)
-{
-    // edit animation
-    if (external_call(global.PluginIsDialogOpen) == 0.0)
-    {
-        external_call(global.PluginOpenEditorDialog, argument0);
-    }
-}
+ScriptChromaInit();
 ```
 
-**PluginOpenEditorDialog**
 
-Opens a `Chroma` animation file with the `.chroma` extension. Returns zero upon success. Returns -1 if there was a failure.
+<a name="ScriptChromaOpenEditorDialog"></a>
+**ScriptChromaOpenEditorDialog**
 
-`DLL`
-
-```C++
-extern "C" EXPORT_API double PluginOpenEditorDialogD(char* path);
-```
-
-`GMS`
+The helper script opens an edit dialog for the animation. The animation parameter is a string. The edit dialog is modal so only one animation can be edited at a time.
 
 ```
-// check if the plugin method has been set globally
-if (global.PluginIsDialogOpen != -1 && global.PluginOpenEditorDialog != -1)
-{
-    // edit animation
-    if (external_call(global.PluginIsDialogOpen) == 0.0)
-    {
-        external_call(global.PluginOpenEditorDialog, argument0);
-    }
-}
+animation = 'Random_Keyboard.chroma';
+ScriptChromaOpenEditorDialog(animation);
 ```
 
-![image_5](images/image_5.png)
 
-**PluginOpenAnimation**
+<a name="ScriptChromaPauseAnimationName"></a>
+**ScriptChromaPauseAnimationName**
 
-Opens a `Chroma` animation file so that it can be played. Returns an animation id >= 0 upon success. Returns -1 if there was a failure. The animation id is used in most of the API methods.
-
-`DLL`
-
-```C++
-extern "C" EXPORT_API double PluginOpenAnimationD(char* path);
-```
-
-`GMS`
+The helper script pauses an animation. The animation parameter is a string.
 
 ```
-// check if the plugin method has been set globally
-if (global.PluginOpenAnimation != -1)
-{
-    // open animation
-    return external_call(global.PluginOpenAnimation, 'RandomKeyboardEffect.chroma');
-}
+animation = 'Random_Keyboard.chroma';
+ScriptChromaPauseAnimationName(animation);
 ```
 
-**PluginLoadAnimation**
 
-Loads `Chroma` effects so that the animation can be played immediately. Returns the animation id upon success. Returns -1 upon failure.
+<a name="ScriptChromaPlayAnimationName"></a>
+**ScriptChromaPlayAnimationName**
 
-`DLL`
-
-```C++
-extern "C" EXPORT_API double PluginLoadAnimationD(double animationId);
-```
-
-`GMS`
+The helper script plays an animation. The animation parameter is a string. The animation can play with loop `ON` or `OFF`.
 
 ```
-// check if the plugin method has been set globally
-if (global.PluginLoadAnimation != -1)
-{
-    // load animation
-    return external_call(global.PluginLoadAnimation, animationId);
-}
+animation = 'Random_Keyboard.chroma';
+loopOn = 1.0;
+loopOff = 0.0;
+loop = loopOn;
+ScriptChromaPlayAnimationName(animation, loop);
 ```
 
-**PluginUnloadAnimation**
 
-Unloads `Chroma` effects to free up resources. Returns the animation id upon success. Returns -1 upon failure.
+<a name="ScriptChromaPlayComposite"></a>
+**ScriptChromaPlayComposite**
 
-`DLL`
-
-```C++
-extern "C" EXPORT_API double PluginUnloadAnimationD(double animationId);
-```
-
-`GMS`
+The helper script plays a set of animations. The composite is a string. The animation can play with loop `ON` or `OFF`. This method will play the set of animations which includes ChromaLink, Headset, Keyboard, Keypad, Mouse, and Mousepad.
 
 ```
-// check if the plugin method has been set globally
-if (global.PluginUnloadAnimation != -1)
-{
-    // play animation
-    return external_call(global.PluginUnloadAnimation, animationId);
-}
+composite = "Random";
+loopOn = 1.0;
+loopOff = 0.0;
+loop = loopOn;
+ScriptChromaPlayComposite(composite, loop);
 ```
 
-**PluginPlayAnimation**
 
-Plays the `Chroma` animation. This will load the animation, if not loaded previously. Returns the animation id upon success. Returns -1 upon failure.
+<a name="ScriptChromaResumeAnimationName"></a>
+**ScriptChromaResumeAnimationName**
 
-`DLL`
-
-```C++
-extern "C" EXPORT_API double PluginPlayAnimationD(double animationId);
-```
-
-`GMS`
+The helper script will resume playing a paused animation. The animation is a string. The animation can resume with loop `ON` or `OFF`.
 
 ```
-// check if the plugin method has been set globally
-if (global.PluginPlayAnimation != -1)
-{
-    // play animation
-    return external_call(global.PluginPlayAnimation, animationId);
-}
+animation = 'Random_Keyboard.chroma';
+loopOn = 1.0;
+loopOff = 0.0;
+loop = loopOn;
+ScriptChromaResumeAnimationName(animation, loop);
 ```
 
-**PluginStopAnimation**
 
-Stops animation playback if in progress. Returns the animation id upon success. Returns -1 upon failure.
+<a name="ScriptChromaSetKeyColorName"></a>
+**ScriptChromaSetKeyColorName**
 
-`DLL`
-
-```C++
-extern "C" EXPORT_API double PluginStopAnimationD(double animationId);
-```
-
-`GMS`
+The helper script assigns the key color to the animation frame. The animation is a string. The frame index is a number from 0 to the frame count. The key is a string of the key number. The color is a string of the colorref number.
 
 ```
-// check if the plugin method has been set globally
-if (global.PluginStopAnimation != -1)
-{
-    // stop the animation
-    return external_call(global.PluginStopAnimation, animationId);
-}
+animation = 'Random_Keyboard.chroma';
+frameIndex = 0;
+RZKEY_W = "515";
+key = RZKEY_W;
+red = "255";
+color = red; 
+ScriptChromaSetKeyColorName(animation, frameIndex, key, color);
 ```
 
-**PluginCloseAnimation**
 
-Closes the `Chroma` animation to free up resources. Returns the animation id upon success. Returns -1 upon failure. This might be used while authoring effects if there was a change necessitating re-opening the animation. The animation id can no longer be used once closed.
+<a name="ScriptChromaStopComposite"></a>
+**ScriptChromaStopComposite**
 
-`DLL`
-
-```C++
-extern "C" EXPORT_API double PluginCloseAnimationD(double animationId);
-```
-
-`GMS`
+The helper script stops a set of animations. The composite is a string. This method will stop the set of animations which includes ChromaLink, Headset, Keyboard, Keypad, Mouse, and Mousepad.
 
 ```
-// check if the plugin method has been set globally
-if (global.PluginCloseAnimation != -1)
-{
-    // close animation and free resources
-    return external_call(global.PluginCloseAnimation, animationId);
-}
+composite = "Random";
+ScriptChromaStopComposite(composite);
 ```
+
+
+<a name="ScriptChromaUninit"></a>
+**ScriptChromaUninit**
+
+The helper script uninitializes the `ChromaSDK` and has no parameters.
+
+```
+ScriptChromaInit();
+```
+
 
 <a name="examples"></a>
 ## Examples
+
+[ScriptGlobals.gml](scripts/ScriptGlobals.gml) - initializes the globals and sets the DLL extension methods. This script is called from the room object create event.
+
+[ScriptAnimateOnKeyRelease.gml](scripts/ScriptAnimateOnKeyRelease.gml) - detects key released events to invoke methods. This script is called from the room object released keyboard event.
 
 [ScriptDrawUI.gml](scripts/ScriptDrawUI.gml) - displays the keyboard shortcuts for the example. This script is called from the room object draw event.
 
 ![image_6](images/image_6.png)
 
-[ScriptGlobals.gml](scripts/ScriptGlobals.gml) - initializes the globals and sets the DLL extension methods. This script is called from the room object create event.
+Helper scripts wrap the Chroma DLL methods to make sure only defined methods are invoked.
 
-[ScriptPluginAnimateOnKeyRelease.gml](scripts/ScriptPluginAnimateOnKeyRelease.gml) - detects key released events to invoke methods. This script is called from the room object released keyboard event.
+* [ScriptChromaCloseAnimationName.gml](scripts/ScriptChromaCloseAnimationName.gml)
 
-[ScriptAnimationOpenAndPlay.gml](scripts/ScriptAnimationOpenAndPlay.gml) - opens and plays the animation passed to the function.
+* [ScriptChromaCopyKeyColorName.gml](scripts/ScriptChromaCopyKeyColorName.gml)
 
-[ScriptAnimationStop.gml](scripts/ScriptAnimationStop.gml) - stops the animation passed to the function.
+* [ScriptChromaGetFrameCountName.gml](scripts/ScriptChromaGetFrameCountName.gml)
 
-[ScriptUninit.gml](scripts/ScriptUninit.gml) - uninitialized the extension before exiting
+* [ScriptChromaInit.gml](scripts/ScriptChromaInit.gml)
+
+* [ScriptChromaOpenEditorDialog.gml](scripts/ScriptChromaOpenEditorDialog.gml)
+
+* [ScriptChromaPauseAnimationName.gml](scripts/ScriptChromaPauseAnimationName.gml)
+
+* [ScriptChromaPlayAnimationName.gml](scripts/ScriptChromaPlayAnimationName.gml)
+
+* [ScriptChromaPlayComposite.gml](scripts/ScriptChromaPlayComposite.gml)
+
+* [ScriptChromaResumeAnimationName.gml](scripts/ScriptChromaResumeAnimationName.gml)
+
+* [ScriptChromaSetKeyColorName.gml](scripts/ScriptChromaSetKeyColorName.gml)
+
+* [ScriptChromaStopComposite.gml](scripts/ScriptChromaStopComposite.gml)
+
+* [ScriptChromaUninit.gml](scripts/ScriptChromaUninit.gml)

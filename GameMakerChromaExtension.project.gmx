@@ -285,21 +285,21 @@
   <backgrounds name="background"/>
   <paths name="paths"/>
   <scripts name="scripts">
-    <script>scripts\ScriptOpenEditorDialog.gml</script>
-    <script>scripts\ScriptPluginAnimateOnKeyRelease.gml</script>
     <script>scripts\ScriptGlobals.gml</script>
-    <script>scripts\ScriptPlayComposite.gml</script>
-    <script>scripts\ScriptStopComposite.gml</script>
-    <script>scripts\ScriptUninit.gml</script>
     <script>scripts\ScriptDrawUI.gml</script>
-    <script>scripts\ScriptInit.gml</script>
-    <script>scripts\ScriptPauseAnimationName.gml</script>
-    <script>scripts\ScriptResumeAnimationName.gml</script>
-    <script>scripts\ScriptCloseAnimationName.gml</script>
-    <script>scripts\ScriptGetFrameCountName.gml</script>
-    <script>scripts\ScriptCopyKeyColorName.gml</script>
-    <script>scripts\ScriptPlayAnimationName.gml</script>
-    <script>scripts\ScriptSetKeyColorName.gml</script>
+    <script>scripts\ScriptAnimateOnKeyRelease.gml</script>
+    <script>scripts\ScriptChromaCloseAnimationName.gml</script>
+    <script>scripts\ScriptChromaCopyKeyColorName.gml</script>
+    <script>scripts\ScriptChromaGetFrameCountName.gml</script>
+    <script>scripts\ScriptChromaInit.gml</script>
+    <script>scripts\ScriptChromaOpenEditorDialog.gml</script>
+    <script>scripts\ScriptChromaPauseAnimationName.gml</script>
+    <script>scripts\ScriptChromaPlayAnimationName.gml</script>
+    <script>scripts\ScriptChromaPlayComposite.gml</script>
+    <script>scripts\ScriptChromaResumeAnimationName.gml</script>
+    <script>scripts\ScriptChromaSetKeyColorName.gml</script>
+    <script>scripts\ScriptChromaStopComposite.gml</script>
+    <script>scripts\ScriptChromaUninit.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\ObjectHandleInput</object>
