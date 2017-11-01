@@ -1,4 +1,5 @@
-show_debug_message("PluginOpenEditorDialog: path="+argument0);
+// EXPORT_API double PluginOpenEditorDialogD(const char* path);
+//show_debug_message("PluginOpenEditorDialog: path="+argument0);
 if (os_type == os_windows)
 {
     if (global.PluginIsDialogOpen != -1 && global.PluginOpenEditorDialog != -1)

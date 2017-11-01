@@ -1,13 +1,13 @@
-RZKEY_W = "515";
-RZKEY_A = "770";
-RZKEY_I = "521";
-RZKEY_J = "776";
-RZKEY_K = "777";
-RZKEY_L = "778";
-RZKEY_S = "771";
-RZKEY_D = "772";
-RZKEY_ENTER = "782";
-red = "255";
+RZKEY_W = 515;
+RZKEY_A = 770;
+RZKEY_I = 521;
+RZKEY_J = 776;
+RZKEY_K = 777;
+RZKEY_L = 778;
+RZKEY_S = 771;
+RZKEY_D = 772;
+RZKEY_ENTER = 782;
+red = 255;
 
 if (os_type == os_windows)
 {
