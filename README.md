@@ -262,6 +262,131 @@ ScriptChromaInit();
 ```
 
 
+<a name="ScriptChromaCloseComposite"></a>
+**ScriptChromaCloseComposite**
+
+The helper script closes a set of animations so they can be reloaded from disk. The set of animations will be stopped if playing.
+
+```
+composite = "Random";
+ScriptChromaCloseComposite(composite);
+```
+
+
+<a name="ScriptChromaGet1DColorName"></a>
+**ScriptChromaGet1DColorName**
+
+The helper script gets the animation color for a frame given the 1D led. The led should be greater than or equal to 0 and less than the MaxLeds.
+
+```
+```
+
+
+<a name="ScriptChromaGet2DColorName"></a>
+**ScriptChromaGet2DColorName**
+
+The helper script gets the animation color for a frame given the 2D row and column. The row should be greater than or equal to 0 and less than the MaxRow. The column should be greater than or equal to 0 and less than the MaxColumn
+
+```
+```
+
+
+<a name="ScriptChromaGetDeviceName"></a>
+**ScriptChromaGetDeviceName**
+
+The helper script returns a number from the EChromaSDKDevice1DEnum or EChromaSDKDevice2DEnum of a Chroma animation respective to the deviceType, as an integer upon success. Returns -1 upon failure.
+
+```
+```
+
+
+<a name="ScriptChromaGetDeviceTypeName"></a>
+**ScriptChromaGetDeviceTypeName**
+
+The helper script returns a number from the EChromaSDKDeviceTypeEnum of a Chroma animation as an integer upon success. Returns -1 upon failure.
+
+```
+```
+
+
+<a name="ScriptChromaGetMaxColumn"></a>
+**ScriptChromaGetMaxColumn**
+
+The helper script returns the MAX COLUMN given the EChromaSDKDevice2DEnum device as an integer upon success. Returns -1 upon failure.
+
+```
+```
+
+
+<a name="ScriptChromaGetMaxLeds"></a>
+**ScriptChromaGetMaxLeds**
+
+The helper script returns the MAX LEDS given the EChromaSDKDevice1DEnum device as an integer upon success. Returns -1 upon failure.
+
+```
+```
+
+
+<a name="ScriptChromaGetMaxRow"></a>
+**ScriptChromaGetMaxRow**
+
+The helper script returns the MAX ROW given the EChromaSDKDevice2DEnum device as an integer upon success. Returns -1 upon failure.
+
+```
+```
+
+
+<a name="ScriptChromaSet1DColorName"></a>
+**ScriptChromaSet1DColorName**
+
+The helper script sets the animation color for a frame given the 1D led. The led should be greater than or equal to 0 and less than the MaxLeds.
+
+```
+green = ScriptToBGRInt(0, 255, 0);
+color = green;
+animation1D = 'Random_ChromaLink.chroma';
+ScriptChromaCloseAnimationName(animation1D);
+frameCount = ScriptChromaGetFrameCountName(animation1D);
+device = ScriptChromaGetDeviceName(animation1D);
+maxLeds = ScriptChromaGetMaxLeds(device);
+for (frameIndex = 0; frameIndex < frameCount; ++frameIndex)
+{
+    for (led = 0; led < maxLeds; ++led)
+    {
+        ScriptChromaSet1DColorName(animation1D, frameIndex, led, color);
+    }
+}
+ScriptChromaPlayAnimationName(animation1D, 1.0);
+```
+
+
+<a name="ScriptChromaSet2DColorName"></a>
+**ScriptChromaSet2DColorName**
+
+The helper script sets the animation color for a frame given the 2D row and column. The row should be greater than or equal to 0 and less than the MaxRow. The column should be greater than or equal to 0 and less than the MaxColumn.
+
+```
+animation2D = 'Random_Keyboard.chroma'
+ScriptChromaCloseAnimationName(animation2D);
+frameCount = ScriptChromaGetFrameCountName(animation2D);
+device = ScriptChromaGetDeviceName(animation2D);
+maxRow = ScriptChromaGetMaxRow(device);
+maxColumn = ScriptChromaGetMaxColumn(device);
+for (frameIndex = 0; frameIndex < frameCount; ++frameIndex)
+{
+    for (i = 0; i < maxRow; ++i)
+    {
+        for (j = 0; j < maxColumn; ++j)
+        {
+            rowColumnIndex = i * maxColumn + j; // only 4 params allowed for DLL methods when string is involved
+            ScriptChromaSet2DColorName(animation2D, frameIndex, rowColumnIndex, color);
+        }
+    }
+}
+ScriptChromaPlayAnimationName(animation2D, 1.0);
+```
+
+
 <a name="examples"></a>
 ## Examples
 

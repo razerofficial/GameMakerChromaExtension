@@ -81,7 +81,7 @@ if (os_type == os_windows)
         ScriptChromaPlayAnimationName(RANDOM_KEYBOARD, 1.0);
     }
     
-    // show hotkeys: green
+    // show all colors as green
     if (keyboard_check_released(ord('Q')))
     {
         green = ScriptToBGRInt(0, 255, 0);
@@ -193,7 +193,7 @@ if (os_type == os_windows)
         ScriptChromaPlayAnimationName(animation1D, 1.0);
     }
     
-    // show hotkeys: blue
+    // show all colors as blue
     if (keyboard_check_released(ord('W')))
     {
         blue = ScriptToBGRInt(0, 0, 255);
