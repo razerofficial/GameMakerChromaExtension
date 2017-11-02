@@ -291,13 +291,22 @@
     <script>scripts\ScriptToBGRInt.gml</script>
     <script>scripts\ScriptChromaCloseAnimationName.gml</script>
     <script>scripts\ScriptChromaCopyKeyColorName.gml</script>
+    <script>scripts\ScriptChromaGet1DColorName.gml</script>
+    <script>scripts\ScriptChromaGet2DColorName.gml</script>
+    <script>scripts\ScriptChromaGetDeviceName.gml</script>
+    <script>scripts\ScriptChromaGetDeviceTypeName.gml</script>
     <script>scripts\ScriptChromaGetFrameCountName.gml</script>
+    <script>scripts\ScriptChromaGetMaxColumn.gml</script>
+    <script>scripts\ScriptChromaGetMaxLeds.gml</script>
+    <script>scripts\ScriptChromaGetMaxRow.gml</script>
     <script>scripts\ScriptChromaInit.gml</script>
     <script>scripts\ScriptChromaOpenEditorDialog.gml</script>
     <script>scripts\ScriptChromaPauseAnimationName.gml</script>
     <script>scripts\ScriptChromaPlayAnimationName.gml</script>
     <script>scripts\ScriptChromaPlayComposite.gml</script>
     <script>scripts\ScriptChromaResumeAnimationName.gml</script>
+    <script>scripts\ScriptChromaSet1DColorName.gml</script>
+    <script>scripts\ScriptChromaSet2DColorName.gml</script>
     <script>scripts\ScriptChromaSetKeyColorName.gml</script>
     <script>scripts\ScriptChromaStopComposite.gml</script>
     <script>scripts\ScriptChromaUninit.gml</script>
