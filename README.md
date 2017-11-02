@@ -115,7 +115,7 @@ ScriptChromaCloseAnimationName(animation);
 <a name="ScriptChromaCopyKeyColorName"></a>
 **ScriptChromaCopyKeyColorName**
 
-The helper script copies the key color from a source animation to the target animation for the key of the animation frame. The source and target animation are strings. The frame index is a number from 0 to the frame count. The key is a string of the key number.
+The helper script copies the key color from a source animation to the target animation for the key of the animation frame. The source and target animation are strings. The frame index is a number from 0 to the frame count. The key is a integer of the key number.
 
 ```
 sourceAnimation = 'Fire_Keyboard.chroma';
@@ -215,14 +215,16 @@ ScriptChromaResumeAnimationName(animation, loop);
 <a name="ScriptChromaSetKeyColorName"></a>
 **ScriptChromaSetKeyColorName**
 
-The helper script assigns the key color to the animation frame. The animation is a string. The frame index is a number from 0 to the frame count. The key is a string of the key number. The color is a string of the colorref number.
+The helper script assigns the key color to the animation frame. The animation is a string. The frame index is a number from 0 to the frame count. The key the integer of the key number. The color is a `COLORREF` integer.
 
 ```
 animation = 'Random_Keyboard.chroma';
 frameIndex = 0;
 RZKEY_W = 515;
 key = RZKEY_W;
-red = 255;
+red = ScriptToBGRInt(255, 0, 0);
+green = ScriptToBGRInt(0, 255, 0);
+blue = ScriptToBGRInt(0, 0, 255);
 color = red; 
 ScriptChromaSetKeyColorName(animation, frameIndex, key, color);
 ```
@@ -252,11 +254,13 @@ ScriptChromaInit();
 <a name="examples"></a>
 ## Examples
 
-[ScriptGlobals.gml](scripts/ScriptGlobals.gml) - initializes the globals and sets the DLL extension methods. This script is called from the room object create event.
-
 [ScriptAnimateOnKeyRelease.gml](scripts/ScriptAnimateOnKeyRelease.gml) - detects key released events to invoke methods. This script is called from the room object released keyboard event.
 
 [ScriptDrawUI.gml](scripts/ScriptDrawUI.gml) - displays the keyboard shortcuts for the example. This script is called from the room object draw event.
+
+[ScriptGlobals.gml](scripts/ScriptGlobals.gml) - initializes the globals and sets the DLL extension methods. This script is called from the room object create event.
+
+[ScriptToBGRInt.gml](scripts/ScriptToBGRInt.gml) - Converts red (0 to 255), green (0 to 255), blue (0 to 255) arguments into a BGR integer `COLORREF`.
 
 ![image_6](images/image_6.png)
 

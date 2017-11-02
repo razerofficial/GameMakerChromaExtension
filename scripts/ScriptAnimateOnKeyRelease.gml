@@ -7,7 +7,6 @@ RZKEY_L = 778;
 RZKEY_S = 771;
 RZKEY_D = 772;
 RZKEY_ENTER = 782;
-red = 255;
 
 if (os_type == os_windows)
 {
@@ -62,11 +61,12 @@ if (os_type == os_windows)
         ScriptChromaResumeAnimationName('Random_Mousepad.chroma', 1.0);
     }
     
-    // show hotkeys
+    // show hotkeys: red
     if (keyboard_check_released(ord('7')))
     {
         ScriptChromaCloseAnimationName('Random_Keyboard.chroma');
         frameCount = ScriptChromaGetFrameCountName('Random_Keyboard.chroma');
+        red = ScriptToBGRInt(255, 0, 0);
         for (frameIndex = 0; frameIndex < frameCount; ++frameIndex)
         {
             ScriptChromaCopyKeyColorName('Fire_Keyboard.chroma', 'Random_Keyboard.chroma', frameIndex, RZKEY_W);
@@ -78,6 +78,38 @@ if (os_type == os_windows)
             ScriptChromaSetKeyColorName('Random_Keyboard.chroma', frameIndex, RZKEY_J, red);
             ScriptChromaSetKeyColorName('Random_Keyboard.chroma', frameIndex, RZKEY_K, red);
             ScriptChromaSetKeyColorName('Random_Keyboard.chroma', frameIndex, RZKEY_L, red);
+        }
+        ScriptChromaPlayAnimationName('Random_Keyboard.chroma', 1.0);
+    }
+    
+    // show hotkeys: green
+    if (keyboard_check_released(ord('Q')))
+    {
+        ScriptChromaCloseAnimationName('Random_Keyboard.chroma');
+        frameCount = ScriptChromaGetFrameCountName('Random_Keyboard.chroma');
+        green = ScriptToBGRInt(0, 255, 0);
+        for (frameIndex = 0; frameIndex < frameCount; ++frameIndex)
+        {
+            ScriptChromaSetKeyColorName('Random_Keyboard.chroma', frameIndex, RZKEY_I, green);
+            ScriptChromaSetKeyColorName('Random_Keyboard.chroma', frameIndex, RZKEY_J, green);
+            ScriptChromaSetKeyColorName('Random_Keyboard.chroma', frameIndex, RZKEY_K, green);
+            ScriptChromaSetKeyColorName('Random_Keyboard.chroma', frameIndex, RZKEY_L, green);
+        }
+        ScriptChromaPlayAnimationName('Random_Keyboard.chroma', 1.0);
+    }
+    
+    // show hotkeys: blue
+    if (keyboard_check_released(ord('W')))
+    {
+        ScriptChromaCloseAnimationName('Random_Keyboard.chroma');
+        frameCount = ScriptChromaGetFrameCountName('Random_Keyboard.chroma');
+        blue = ScriptToBGRInt(0, 0, 255);
+        for (frameIndex = 0; frameIndex < frameCount; ++frameIndex)
+        {
+            ScriptChromaSetKeyColorName('Random_Keyboard.chroma', frameIndex, RZKEY_I, blue);
+            ScriptChromaSetKeyColorName('Random_Keyboard.chroma', frameIndex, RZKEY_J, blue);
+            ScriptChromaSetKeyColorName('Random_Keyboard.chroma', frameIndex, RZKEY_K, blue);
+            ScriptChromaSetKeyColorName('Random_Keyboard.chroma', frameIndex, RZKEY_L, blue);
         }
         ScriptChromaPlayAnimationName('Random_Keyboard.chroma', 1.0);
     }

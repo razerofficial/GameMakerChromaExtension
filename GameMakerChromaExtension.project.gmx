@@ -285,9 +285,10 @@
   <backgrounds name="background"/>
   <paths name="paths"/>
   <scripts name="scripts">
+    <script>scripts\ScriptAnimateOnKeyRelease.gml</script>
     <script>scripts\ScriptGlobals.gml</script>
     <script>scripts\ScriptDrawUI.gml</script>
-    <script>scripts\ScriptAnimateOnKeyRelease.gml</script>
+    <script>scripts\ScriptToBGRInt.gml</script>
     <script>scripts\ScriptChromaCloseAnimationName.gml</script>
     <script>scripts\ScriptChromaCopyKeyColorName.gml</script>
     <script>scripts\ScriptChromaGetFrameCountName.gml</script>
