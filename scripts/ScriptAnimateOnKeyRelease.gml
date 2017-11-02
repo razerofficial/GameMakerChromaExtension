@@ -5,16 +5,6 @@ RANDOM_KEYPAD = 'Random_Keypad.chroma';
 RANDOM_MOUSE = 'Random_Mouse.chroma';
 RANDOM_MOUSEPAD = 'Random_Mousepad.chroma';
 
-RZKEY_W = 515;
-RZKEY_A = 770;
-RZKEY_I = 521;
-RZKEY_J = 776;
-RZKEY_K = 777;
-RZKEY_L = 778;
-RZKEY_S = 771;
-RZKEY_D = 772;
-RZKEY_ENTER = 782;
-
 if (os_type == os_windows)
 {
     // play composite
@@ -78,15 +68,15 @@ if (os_type == os_windows)
         red = ScriptToBGRInt(255, 0, 0);
         for (frameIndex = 0; frameIndex < frameCount; ++frameIndex)
         {
-            ScriptChromaCopyKeyColorName('Fire_Keyboard.chroma', RANDOM_KEYBOARD, frameIndex, RZKEY_W);
-            ScriptChromaCopyKeyColorName('Fire_Keyboard.chroma', RANDOM_KEYBOARD, frameIndex, RZKEY_A);
-            ScriptChromaCopyKeyColorName('Fire_Keyboard.chroma', RANDOM_KEYBOARD, frameIndex, RZKEY_S);
-            ScriptChromaCopyKeyColorName('Fire_Keyboard.chroma', RANDOM_KEYBOARD, frameIndex, RZKEY_D);
-            ScriptChromaCopyKeyColorName('Fire_Keyboard.chroma', RANDOM_KEYBOARD, frameIndex, RZKEY_ENTER);
-            ScriptChromaSetKeyColorName(RANDOM_KEYBOARD, frameIndex, RZKEY_I, red);
-            ScriptChromaSetKeyColorName(RANDOM_KEYBOARD, frameIndex, RZKEY_J, red);
-            ScriptChromaSetKeyColorName(RANDOM_KEYBOARD, frameIndex, RZKEY_K, red);
-            ScriptChromaSetKeyColorName(RANDOM_KEYBOARD, frameIndex, RZKEY_L, red);
+            ScriptChromaCopyKeyColorName('Fire_Keyboard.chroma', RANDOM_KEYBOARD, frameIndex, global.RZKEY_W);
+            ScriptChromaCopyKeyColorName('Fire_Keyboard.chroma', RANDOM_KEYBOARD, frameIndex, global.RZKEY_A);
+            ScriptChromaCopyKeyColorName('Fire_Keyboard.chroma', RANDOM_KEYBOARD, frameIndex, global.RZKEY_S);
+            ScriptChromaCopyKeyColorName('Fire_Keyboard.chroma', RANDOM_KEYBOARD, frameIndex, global.RZKEY_D);
+            ScriptChromaCopyKeyColorName('Fire_Keyboard.chroma', RANDOM_KEYBOARD, frameIndex, global.RZKEY_ENTER);
+            ScriptChromaSetKeyColorName(RANDOM_KEYBOARD, frameIndex, global.RZKEY_I, red);
+            ScriptChromaSetKeyColorName(RANDOM_KEYBOARD, frameIndex, global.RZKEY_J, red);
+            ScriptChromaSetKeyColorName(RANDOM_KEYBOARD, frameIndex, global.RZKEY_K, red);
+            ScriptChromaSetKeyColorName(RANDOM_KEYBOARD, frameIndex, global.RZKEY_L, red);
         }
         ScriptChromaPlayAnimationName(RANDOM_KEYBOARD, 1.0);
     }
