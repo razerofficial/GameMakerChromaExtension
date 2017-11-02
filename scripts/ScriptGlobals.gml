@@ -3,6 +3,7 @@ if (os_type == os_windows)
     // init globals
     global.PluginCloseAnimation = external_define('CChromaEditorLibrary.dll', 'PluginCloseAnimationD', dll_cdecl, ty_real, 1, ty_real);
     global.PluginCloseAnimationName = external_define('CChromaEditorLibrary.dll', 'PluginCloseAnimationNameD', dll_cdecl, ty_real, 1, ty_string);
+    global.PluginCloseComposite = external_define('CChromaEditorLibrary.dll', 'PluginCloseCompositeD', dll_cdecl, ty_real, 1, ty_string);
     global.PluginCopyKeyColorName = external_define('CChromaEditorLibrary.dll', 'PluginCopyKeyColorNameD', dll_cdecl, ty_real, 4, ty_string, ty_string, ty_real, ty_real);
     global.PluginGet1DColorName = external_define('CChromaEditorLibrary.dll', 'PluginGet1DColorNameD', dll_cdecl, ty_real, 3, ty_string, ty_real, ty_real);
     global.PluginGet2DColorName = external_define('CChromaEditorLibrary.dll', 'PluginGet2DColorNameD', dll_cdecl, ty_real, 4, ty_string, ty_real, ty_real, ty_real);
@@ -24,7 +25,7 @@ if (os_type == os_windows)
     global.PluginPlayComposite = external_define('CChromaEditorLibrary.dll', 'PluginPlayCompositeD', dll_cdecl, ty_real, 2, ty_string, ty_real);
     global.PluginResumeAnimationName = external_define('CChromaEditorLibrary.dll', 'PluginResumeAnimationNameD', dll_cdecl, ty_real, 2, ty_string, ty_real);
     global.PluginSet1DColorName = external_define('CChromaEditorLibrary.dll', 'PluginSet1DColorNameD', dll_cdecl, ty_real, 4, ty_string, ty_real, ty_real, ty_real);
-    global.PluginSet2DColorName = external_define('CChromaEditorLibrary.dll', 'PluginSet2DColorNameD', dll_cdecl, ty_real, 5, ty_string, ty_real, ty_real, ty_real, ty_real);
+    global.PluginSet2DColorName = external_define('CChromaEditorLibrary.dll', 'PluginSet2DColorNameD', dll_cdecl, ty_real, 4, ty_string, ty_real, ty_real, ty_real);
     global.PluginSetKeyColorName = external_define('CChromaEditorLibrary.dll', 'PluginSetKeyColorNameD', dll_cdecl, ty_real, 4, ty_string, ty_real, ty_real, ty_real);
     global.PluginStopAnimation = external_define('CChromaEditorLibrary.dll', 'PluginStopAnimationD', dll_cdecl, ty_real, 1, ty_real);
     global.PluginStopComposite = external_define('CChromaEditorLibrary.dll', 'PluginStopCompositeD', dll_cdecl, ty_real, 1, ty_string);

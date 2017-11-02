@@ -1,3 +1,10 @@
+RANDOM_CHROMA_LINK = 'Random_ChromaLink.chroma';
+RANDOM_HEADSET = 'Random_Headset.chroma';
+RANDOM_KEYBOARD = 'Random_Keyboard.chroma';
+RANDOM_KEYPAD = 'Random_Keypad.chroma';
+RANDOM_MOUSE = 'Random_Mouse.chroma';
+RANDOM_MOUSEPAD = 'Random_Mousepad.chroma';
+
 RZKEY_W = 515;
 RZKEY_A = 770;
 RZKEY_I = 521;
@@ -13,12 +20,14 @@ if (os_type == os_windows)
     // play composite
     if (keyboard_check_released(ord('1')))
     {
+        ScriptChromaCloseComposite('Random'); //reload the animation, other input modifies the set
         ScriptChromaPlayComposite('Random', 0.0);
     }
     
     // loop composite
     if (keyboard_check_released(ord('2')))
     {
+        ScriptChromaCloseComposite('Random'); //reload the animation, other input modifies the set
         ScriptChromaPlayComposite('Random', 1.0);
     }
     
@@ -31,94 +40,286 @@ if (os_type == os_windows)
     // pause animations
     if (keyboard_check_released(ord('4')))
     {
-        ScriptChromaPauseAnimationName('Random_ChromaLink.chroma');
-        ScriptChromaPauseAnimationName('Random_Headset.chroma');
-        ScriptChromaPauseAnimationName('Random_Keyboard.chroma');
-        ScriptChromaPauseAnimationName('Random_Keypad.chroma');
-        ScriptChromaPauseAnimationName('Random_Mouse.chroma');
-        ScriptChromaPauseAnimationName('Random_Mousepad.chroma');
+        ScriptChromaPauseAnimationName(RANDOM_CHROMA_LINK);
+        ScriptChromaPauseAnimationName(RANDOM_HEADSET);
+        ScriptChromaPauseAnimationName(RANDOM_KEYBOARD);
+        ScriptChromaPauseAnimationName(RANDOM_KEYPAD);
+        ScriptChromaPauseAnimationName(RANDOM_MOUSE);
+        ScriptChromaPauseAnimationName(RANDOM_MOUSEPAD);
     }
     
     // resume animations
     if (keyboard_check_released(ord('5')))
     {
-        ScriptChromaResumeAnimationName('Random_ChromaLink.chroma', 0.0);
-        ScriptChromaResumeAnimationName('Random_Headset.chroma', 0.0);
-        ScriptChromaResumeAnimationName('Random_Keyboard.chroma', 0.0);
-        ScriptChromaResumeAnimationName('Random_Keypad.chroma', 0.0);
-        ScriptChromaResumeAnimationName('Random_Mouse.chroma', 0.0);
-        ScriptChromaResumeAnimationName('Random_Mousepad.chroma', 0.0);
+        ScriptChromaResumeAnimationName(RANDOM_CHROMA_LINK, 0.0);
+        ScriptChromaResumeAnimationName(RANDOM_HEADSET, 0.0);
+        ScriptChromaResumeAnimationName(RANDOM_KEYBOARD, 0.0);
+        ScriptChromaResumeAnimationName(RANDOM_KEYPAD, 0.0);
+        ScriptChromaResumeAnimationName(RANDOM_MOUSE, 0.0);
+        ScriptChromaResumeAnimationName(RANDOM_MOUSEPAD, 0.0);
     }
     
     // resume loop animations
     if (keyboard_check_released(ord('6')))
     {
-        ScriptChromaResumeAnimationName('Random_ChromaLink.chroma', 1.0);
-        ScriptChromaResumeAnimationName('Random_Headset.chroma', 1.0);
-        ScriptChromaResumeAnimationName('Random_Keyboard.chroma', 1.0);
-        ScriptChromaResumeAnimationName('Random_Keypad.chroma', 1.0);
-        ScriptChromaResumeAnimationName('Random_Mouse.chroma', 1.0);
-        ScriptChromaResumeAnimationName('Random_Mousepad.chroma', 1.0);
+        ScriptChromaResumeAnimationName(RANDOM_CHROMA_LINK, 1.0);
+        ScriptChromaResumeAnimationName(RANDOM_HEADSET, 1.0);
+        ScriptChromaResumeAnimationName(RANDOM_KEYBOARD, 1.0);
+        ScriptChromaResumeAnimationName(RANDOM_KEYPAD, 1.0);
+        ScriptChromaResumeAnimationName(RANDOM_MOUSE, 1.0);
+        ScriptChromaResumeAnimationName(RANDOM_MOUSEPAD, 1.0);
     }
     
     // show hotkeys: red
     if (keyboard_check_released(ord('7')))
     {
-        ScriptChromaCloseAnimationName('Random_Keyboard.chroma');
-        frameCount = ScriptChromaGetFrameCountName('Random_Keyboard.chroma');
+        ScriptChromaCloseAnimationName(RANDOM_KEYBOARD);
+        frameCount = ScriptChromaGetFrameCountName(RANDOM_KEYBOARD);
         red = ScriptToBGRInt(255, 0, 0);
         for (frameIndex = 0; frameIndex < frameCount; ++frameIndex)
         {
-            ScriptChromaCopyKeyColorName('Fire_Keyboard.chroma', 'Random_Keyboard.chroma', frameIndex, RZKEY_W);
-            ScriptChromaCopyKeyColorName('Fire_Keyboard.chroma', 'Random_Keyboard.chroma', frameIndex, RZKEY_A);
-            ScriptChromaCopyKeyColorName('Fire_Keyboard.chroma', 'Random_Keyboard.chroma', frameIndex, RZKEY_S);
-            ScriptChromaCopyKeyColorName('Fire_Keyboard.chroma', 'Random_Keyboard.chroma', frameIndex, RZKEY_D);
-            ScriptChromaCopyKeyColorName('Fire_Keyboard.chroma', 'Random_Keyboard.chroma', frameIndex, RZKEY_ENTER);
-            ScriptChromaSetKeyColorName('Random_Keyboard.chroma', frameIndex, RZKEY_I, red);
-            ScriptChromaSetKeyColorName('Random_Keyboard.chroma', frameIndex, RZKEY_J, red);
-            ScriptChromaSetKeyColorName('Random_Keyboard.chroma', frameIndex, RZKEY_K, red);
-            ScriptChromaSetKeyColorName('Random_Keyboard.chroma', frameIndex, RZKEY_L, red);
+            ScriptChromaCopyKeyColorName('Fire_Keyboard.chroma', RANDOM_KEYBOARD, frameIndex, RZKEY_W);
+            ScriptChromaCopyKeyColorName('Fire_Keyboard.chroma', RANDOM_KEYBOARD, frameIndex, RZKEY_A);
+            ScriptChromaCopyKeyColorName('Fire_Keyboard.chroma', RANDOM_KEYBOARD, frameIndex, RZKEY_S);
+            ScriptChromaCopyKeyColorName('Fire_Keyboard.chroma', RANDOM_KEYBOARD, frameIndex, RZKEY_D);
+            ScriptChromaCopyKeyColorName('Fire_Keyboard.chroma', RANDOM_KEYBOARD, frameIndex, RZKEY_ENTER);
+            ScriptChromaSetKeyColorName(RANDOM_KEYBOARD, frameIndex, RZKEY_I, red);
+            ScriptChromaSetKeyColorName(RANDOM_KEYBOARD, frameIndex, RZKEY_J, red);
+            ScriptChromaSetKeyColorName(RANDOM_KEYBOARD, frameIndex, RZKEY_K, red);
+            ScriptChromaSetKeyColorName(RANDOM_KEYBOARD, frameIndex, RZKEY_L, red);
         }
-        ScriptChromaPlayAnimationName('Random_Keyboard.chroma', 1.0);
+        ScriptChromaPlayAnimationName(RANDOM_KEYBOARD, 1.0);
     }
     
     // show hotkeys: green
     if (keyboard_check_released(ord('Q')))
     {
-        ScriptChromaCloseAnimationName('Random_Keyboard.chroma');
-        frameCount = ScriptChromaGetFrameCountName('Random_Keyboard.chroma');
         green = ScriptToBGRInt(0, 255, 0);
+        color = green;
+
+        // ChromaLink        
+        animation1D = RANDOM_CHROMA_LINK;
+        ScriptChromaCloseAnimationName(animation1D);
+        frameCount = ScriptChromaGetFrameCountName(animation1D);
+        device = ScriptChromaGetDeviceName(animation1D);
+        maxLeds = ScriptChromaGetMaxLeds(device);
         for (frameIndex = 0; frameIndex < frameCount; ++frameIndex)
         {
-            ScriptChromaSetKeyColorName('Random_Keyboard.chroma', frameIndex, RZKEY_I, green);
-            ScriptChromaSetKeyColorName('Random_Keyboard.chroma', frameIndex, RZKEY_J, green);
-            ScriptChromaSetKeyColorName('Random_Keyboard.chroma', frameIndex, RZKEY_K, green);
-            ScriptChromaSetKeyColorName('Random_Keyboard.chroma', frameIndex, RZKEY_L, green);
+            for (led = 0; led < maxLeds; ++led)
+            {
+                ScriptChromaSet1DColorName(animation1D, frameIndex, led, color);
+            }
         }
-        ScriptChromaPlayAnimationName('Random_Keyboard.chroma', 1.0);
+        ScriptChromaPlayAnimationName(animation1D, 1.0);
+        
+        // Headset
+        animation1D = RANDOM_HEADSET
+        ScriptChromaCloseAnimationName(animation1D);
+        frameCount = ScriptChromaGetFrameCountName(animation1D);
+        device = ScriptChromaGetDeviceName(animation1D);
+        maxLeds = ScriptChromaGetMaxLeds(device);
+        for (frameIndex = 0; frameIndex < frameCount; ++frameIndex)
+        {
+            for (led = 0; led < maxLeds; ++led)
+            {
+                ScriptChromaSet1DColorName(animation1D, frameIndex, led, color);
+            }
+        }
+        ScriptChromaPlayAnimationName(animation1D, 1.0);
+        
+        // Keyboard
+        animation2D = RANDOM_KEYBOARD
+        ScriptChromaCloseAnimationName(animation2D);
+        frameCount = ScriptChromaGetFrameCountName(animation2D);
+        device = ScriptChromaGetDeviceName(animation2D);
+        maxRow = ScriptChromaGetMaxRow(device);
+        maxColumn = ScriptChromaGetMaxColumn(device);
+        for (frameIndex = 0; frameIndex < frameCount; ++frameIndex)
+        {
+            for (i = 0; i < maxRow; ++i)
+            {
+                for (j = 0; j < maxColumn; ++j)
+                {
+                    rowColumnIndex = i * maxColumn + j; // only 4 params allowed for DLL methods when string is involved
+                    ScriptChromaSet2DColorName(animation2D, frameIndex, rowColumnIndex, color);
+                }
+            }
+        }
+        ScriptChromaPlayAnimationName(animation2D, 1.0);
+        
+        // Keypad
+        animation2D = RANDOM_KEYPAD
+        ScriptChromaCloseAnimationName(animation2D);
+        frameCount = ScriptChromaGetFrameCountName(animation2D);
+        device = ScriptChromaGetDeviceName(animation2D);
+        maxRow = ScriptChromaGetMaxRow(device);
+        maxColumn = ScriptChromaGetMaxColumn(device);
+        for (frameIndex = 0; frameIndex < frameCount; ++frameIndex)
+        {
+            for (i = 0; i < maxRow; ++i)
+            {
+                for (j = 0; j < maxColumn; ++j)
+                {
+                    rowColumnIndex = i * maxColumn + j; // only 4 params allowed for DLL methods when string is involved
+                    ScriptChromaSet2DColorName(animation2D, frameIndex, rowColumnIndex, color);
+                }
+            }
+        }
+        ScriptChromaPlayAnimationName(animation2D, 1.0);
+        
+        // Mouse
+        animation2D = RANDOM_MOUSE
+        ScriptChromaCloseAnimationName(animation2D);
+        frameCount = ScriptChromaGetFrameCountName(animation2D);
+        device = ScriptChromaGetDeviceName(animation2D);
+        maxRow = ScriptChromaGetMaxRow(device);
+        maxColumn = ScriptChromaGetMaxColumn(device);
+        for (frameIndex = 0; frameIndex < frameCount; ++frameIndex)
+        {
+            for (i = 0; i < maxRow; ++i)
+            {
+                for (j = 0; j < maxColumn; ++j)
+                {
+                    rowColumnIndex = i * maxColumn + j; // only 4 params allowed for DLL methods when string is involved
+                    ScriptChromaSet2DColorName(animation2D, frameIndex, rowColumnIndex, color);
+                }
+            }
+        }
+        ScriptChromaPlayAnimationName(animation2D, 1.0);
+        
+        // Mousepad
+        animation1D = RANDOM_MOUSEPAD;
+        ScriptChromaCloseAnimationName(animation1D);
+        frameCount = ScriptChromaGetFrameCountName(animation1D);
+        device = ScriptChromaGetDeviceName(animation1D);
+        maxLeds = ScriptChromaGetMaxLeds(device);
+        for (frameIndex = 0; frameIndex < frameCount; ++frameIndex)
+        {
+            for (led = 0; led < maxLeds; ++led)
+            {
+                ScriptChromaSet1DColorName(animation1D, frameIndex, led, color);
+            }
+        }
+        ScriptChromaPlayAnimationName(animation1D, 1.0);
     }
     
     // show hotkeys: blue
     if (keyboard_check_released(ord('W')))
     {
-        ScriptChromaCloseAnimationName('Random_Keyboard.chroma');
-        frameCount = ScriptChromaGetFrameCountName('Random_Keyboard.chroma');
         blue = ScriptToBGRInt(0, 0, 255);
+        color = blue;
+
+        // ChromaLink        
+        animation1D = RANDOM_CHROMA_LINK;
+        ScriptChromaCloseAnimationName(animation1D);
+        frameCount = ScriptChromaGetFrameCountName(animation1D);
+        device = ScriptChromaGetDeviceName(animation1D);
+        maxLeds = ScriptChromaGetMaxLeds(device);
         for (frameIndex = 0; frameIndex < frameCount; ++frameIndex)
         {
-            ScriptChromaSetKeyColorName('Random_Keyboard.chroma', frameIndex, RZKEY_I, blue);
-            ScriptChromaSetKeyColorName('Random_Keyboard.chroma', frameIndex, RZKEY_J, blue);
-            ScriptChromaSetKeyColorName('Random_Keyboard.chroma', frameIndex, RZKEY_K, blue);
-            ScriptChromaSetKeyColorName('Random_Keyboard.chroma', frameIndex, RZKEY_L, blue);
+            for (led = 0; led < maxLeds; ++led)
+            {
+                ScriptChromaSet1DColorName(animation1D, frameIndex, led, color);
+            }
         }
-        ScriptChromaPlayAnimationName('Random_Keyboard.chroma', 1.0);
+        ScriptChromaPlayAnimationName(animation1D, 1.0);
+        
+        // Headset
+        animation1D = RANDOM_HEADSET
+        ScriptChromaCloseAnimationName(animation1D);
+        frameCount = ScriptChromaGetFrameCountName(animation1D);
+        device = ScriptChromaGetDeviceName(animation1D);
+        maxLeds = ScriptChromaGetMaxLeds(device);
+        for (frameIndex = 0; frameIndex < frameCount; ++frameIndex)
+        {
+            for (led = 0; led < maxLeds; ++led)
+            {
+                ScriptChromaSet1DColorName(animation1D, frameIndex, led, color);
+            }
+        }
+        ScriptChromaPlayAnimationName(animation1D, 1.0);
+        
+        // Keyboard
+        animation2D = RANDOM_KEYBOARD
+        ScriptChromaCloseAnimationName(animation2D);
+        frameCount = ScriptChromaGetFrameCountName(animation2D);
+        device = ScriptChromaGetDeviceName(animation2D);
+        maxRow = ScriptChromaGetMaxRow(device);
+        maxColumn = ScriptChromaGetMaxColumn(device);
+        for (frameIndex = 0; frameIndex < frameCount; ++frameIndex)
+        {
+            for (i = 0; i < maxRow; ++i)
+            {
+                for (j = 0; j < maxColumn; ++j)
+                {
+                    rowColumnIndex = i * maxColumn + j; // only 4 params allowed for DLL methods when string is involved
+                    ScriptChromaSet2DColorName(animation2D, frameIndex, rowColumnIndex, color);
+                }
+            }
+        }
+        ScriptChromaPlayAnimationName(animation2D, 1.0);
+        
+        // Keypad
+        animation2D = RANDOM_KEYPAD
+        ScriptChromaCloseAnimationName(animation2D);
+        frameCount = ScriptChromaGetFrameCountName(animation2D);
+        device = ScriptChromaGetDeviceName(animation2D);
+        maxRow = ScriptChromaGetMaxRow(device);
+        maxColumn = ScriptChromaGetMaxColumn(device);
+        for (frameIndex = 0; frameIndex < frameCount; ++frameIndex)
+        {
+            for (i = 0; i < maxRow; ++i)
+            {
+                for (j = 0; j < maxColumn; ++j)
+                {
+                    rowColumnIndex = i * maxColumn + j; // only 4 params allowed for DLL methods when string is involved
+                    ScriptChromaSet2DColorName(animation2D, frameIndex, rowColumnIndex, color);
+                }
+            }
+        }
+        ScriptChromaPlayAnimationName(animation2D, 1.0);
+        
+        // Mouse
+        animation2D = RANDOM_MOUSE
+        ScriptChromaCloseAnimationName(animation2D);
+        frameCount = ScriptChromaGetFrameCountName(animation2D);
+        device = ScriptChromaGetDeviceName(animation2D);
+        maxRow = ScriptChromaGetMaxRow(device);
+        maxColumn = ScriptChromaGetMaxColumn(device);
+        for (frameIndex = 0; frameIndex < frameCount; ++frameIndex)
+        {
+            for (i = 0; i < maxRow; ++i)
+            {
+                for (j = 0; j < maxColumn; ++j)
+                {
+                    rowColumnIndex = i * maxColumn + j; // only 4 params allowed for DLL methods when string is involved
+                    ScriptChromaSet2DColorName(animation2D, frameIndex, rowColumnIndex, color);
+                }
+            }
+        }
+        ScriptChromaPlayAnimationName(animation2D, 1.0);
+        
+        // Mousepad
+        animation1D = RANDOM_MOUSEPAD;
+        ScriptChromaCloseAnimationName(animation1D);
+        frameCount = ScriptChromaGetFrameCountName(animation1D);
+        device = ScriptChromaGetDeviceName(animation1D);
+        maxLeds = ScriptChromaGetMaxLeds(device);
+        for (frameIndex = 0; frameIndex < frameCount; ++frameIndex)
+        {
+            for (led = 0; led < maxLeds; ++led)
+            {
+                ScriptChromaSet1DColorName(animation1D, frameIndex, led, color);
+            }
+        }
+        ScriptChromaPlayAnimationName(animation1D, 1.0);
     }
     
     // hide hotkeys
     if (keyboard_check_released(ord('8')))
     {
-        ScriptChromaCloseAnimationName('Random_Keyboard.chroma');
-        ScriptChromaPlayAnimationName('Random_Keyboard.chroma', 1.0);
+        ScriptChromaCloseAnimationName(RANDOM_KEYBOARD);
+        ScriptChromaPlayAnimationName(RANDOM_KEYBOARD, 1.0);
     }
     
     // edit animation

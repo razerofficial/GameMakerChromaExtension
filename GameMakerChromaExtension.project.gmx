@@ -290,6 +290,7 @@
     <script>scripts\ScriptDrawUI.gml</script>
     <script>scripts\ScriptToBGRInt.gml</script>
     <script>scripts\ScriptChromaCloseAnimationName.gml</script>
+    <script>scripts\ScriptChromaCloseComposite.gml</script>
     <script>scripts\ScriptChromaCopyKeyColorName.gml</script>
     <script>scripts\ScriptChromaGet1DColorName.gml</script>
     <script>scripts\ScriptChromaGet2DColorName.gml</script>

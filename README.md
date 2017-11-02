@@ -71,6 +71,7 @@ Add `Chroma` animation files to the project's `Included Files` to make the anima
 ## API
 
 * [ScriptChromaCloseAnimationName](#ScriptChromaCloseAnimationName)
+* [ScriptChromaCloseComposite](#ScriptChromaCloseComposite)
 * [ScriptChromaCopyKeyColorName](#ScriptChromaCopyKeyColorName)
 * [ScriptChromaGet1DColorName](#ScriptChromaGet1DColorName)
 * [ScriptChromaGet2DColorName](#ScriptChromaGet2DColorName)
@@ -276,9 +277,25 @@ Helper scripts wrap the Chroma DLL methods to make sure only defined methods are
 
 * [ScriptChromaCloseAnimationName.gml](scripts/ScriptChromaCloseAnimationName.gml)
 
+* [ScriptChromaCloseComposite.gml](scripts/ScriptChromaCloseComposite.gml)
+
 * [ScriptChromaCopyKeyColorName.gml](scripts/ScriptChromaCopyKeyColorName.gml)
 
+* [ScriptChromaGet1DColorName.gml](scripts/ScriptChromaGet1DColorName)
+
+* [ScriptChromaGet2DColorName.gml](scripts/ScriptChromaGet2DColorName)
+
+* [ScriptChromaGetDeviceName.gml](scripts/ScriptChromaGetDeviceName)
+
+* [ScriptChromaGetDeviceTypeName.gml](scripts/ScriptChromaGetDeviceTypeName)
+
 * [ScriptChromaGetFrameCountName.gml](scripts/ScriptChromaGetFrameCountName.gml)
+
+* [ScriptChromaGetMaxColumn.gml](scripts/ScriptChromaGetMaxColumn)
+
+* [ScriptChromaGetMaxLeds.gml](scripts/ScriptChromaGetMaxLeds)
+
+* [ScriptChromaGetMaxRow.gml](scripts/ScriptChromaGetMaxRow)
 
 * [ScriptChromaInit.gml](scripts/ScriptChromaInit.gml)
 
@@ -291,6 +308,10 @@ Helper scripts wrap the Chroma DLL methods to make sure only defined methods are
 * [ScriptChromaPlayComposite.gml](scripts/ScriptChromaPlayComposite.gml)
 
 * [ScriptChromaResumeAnimationName.gml](scripts/ScriptChromaResumeAnimationName.gml)
+
+* [ScriptChromaSet1DColorName.gml](scripts/ScriptChromaSet1DColorName)
+
+* [ScriptChromaSet2DColorName.gml](scripts/ScriptChromaSet2DColorName)
 
 * [ScriptChromaSetKeyColorName.gml](scripts/ScriptChromaSetKeyColorName.gml)
 
