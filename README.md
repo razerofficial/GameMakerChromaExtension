@@ -279,6 +279,17 @@ ScriptChromaCloseComposite(composite);
 The helper script gets the animation color for a frame given the 1D led. The led should be greater than or equal to 0 and less than the MaxLeds.
 
 ```
+animation1D = 'Random_ChromaLink.chroma';
+frameCount = ScriptChromaGetFrameCountName(animation1D);
+device = ScriptChromaGetDeviceName(animation1D);
+maxLeds = ScriptChromaGetMaxLeds(device);
+for (frameIndex = 0; frameIndex < frameCount; ++frameIndex)
+{
+    for (led = 0; led < maxLeds; ++led)
+    {
+        color = ScriptChromaGet1DColorName(animation1D, frameIndex, led);
+    }
+}
 ```
 
 
@@ -288,6 +299,22 @@ The helper script gets the animation color for a frame given the 1D led. The led
 The helper script gets the animation color for a frame given the 2D row and column. The row should be greater than or equal to 0 and less than the MaxRow. The column should be greater than or equal to 0 and less than the MaxColumn
 
 ```
+animation2D = 'Random_Keyboard.chroma'
+frameCount = ScriptChromaGetFrameCountName(animation2D);
+device = ScriptChromaGetDeviceName(animation2D);
+maxRow = ScriptChromaGetMaxRow(device);
+maxColumn = ScriptChromaGetMaxColumn(device);
+for (frameIndex = 0; frameIndex < frameCount; ++frameIndex)
+{
+    for (i = 0; i < maxRow; ++i)
+    {
+        for (j = 0; j < maxColumn; ++j)
+        {
+            rowColumnIndex = i * maxColumn + j; // only 4 params allowed for DLL methods when string is involved
+            color = ScriptChromaGet2DColorName(animation2D, frameIndex, rowColumnIndex);
+        }
+    }
+}
 ```
 
 
@@ -297,6 +324,13 @@ The helper script gets the animation color for a frame given the 2D row and colu
 The helper script returns a number from the EChromaSDKDevice1DEnum or EChromaSDKDevice2DEnum of a Chroma animation respective to the deviceType, as an integer upon success. Returns -1 upon failure.
 
 ```
+// 1D device
+animation1D = 'Random_ChromaLink.chroma';
+device = ScriptChromaGetDeviceName(animation2D);
+
+// 2D device
+animation2D = 'Random_Keyboard.chroma'
+device = ScriptChromaGetDeviceName(animation2D);
 ```
 
 
@@ -306,6 +340,13 @@ The helper script returns a number from the EChromaSDKDevice1DEnum or EChromaSDK
 The helper script returns a number from the EChromaSDKDeviceTypeEnum of a Chroma animation as an integer upon success. Returns -1 upon failure.
 
 ```
+// 1D device type
+animation1D = 'Random_ChromaLink.chroma';
+deviceType = ScriptChromaGetDeviceTypeName(animation2D);
+
+// 2D device type
+animation2D = 'Random_Keyboard.chroma'
+deviceType = ScriptChromaGetDeviceTypeName(animation2D);
 ```
 
 
@@ -315,6 +356,9 @@ The helper script returns a number from the EChromaSDKDeviceTypeEnum of a Chroma
 The helper script returns the MAX COLUMN given the EChromaSDKDevice2DEnum device as an integer upon success. Returns -1 upon failure.
 
 ```
+animation2D = 'Random_Keyboard.chroma'
+device = ScriptChromaGetDeviceName(animation2D);
+maxColumn = ScriptChromaGetMaxColumn(device);
 ```
 
 
@@ -324,6 +368,9 @@ The helper script returns the MAX COLUMN given the EChromaSDKDevice2DEnum device
 The helper script returns the MAX LEDS given the EChromaSDKDevice1DEnum device as an integer upon success. Returns -1 upon failure.
 
 ```
+animation1D = 'Random_ChromaLink.chroma';
+device = ScriptChromaGetDeviceName(animation1D);
+maxLeds = ScriptChromaGetMaxLeds(device);
 ```
 
 
@@ -333,6 +380,9 @@ The helper script returns the MAX LEDS given the EChromaSDKDevice1DEnum device a
 The helper script returns the MAX ROW given the EChromaSDKDevice2DEnum device as an integer upon success. Returns -1 upon failure.
 
 ```
+animation2D = 'Random_Keyboard.chroma'
+device = ScriptChromaGetDeviceName(animation2D);
+maxRow = ScriptChromaGetMaxRow(device);
 ```
 
 
