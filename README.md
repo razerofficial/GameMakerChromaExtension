@@ -263,7 +263,7 @@ ScriptChromaSetKeyColorName(animation, frameIndex, key, color);
 <a name="ScriptChromaGetKeyColorName"></a>
 **ScriptChromaGetKeyColorName**
 
-The helper script gets the key color to the animation frame. The animation is a string. The frame index is a number from 0 to the frame count. The key the integer of the key number. The color is a `COLORREF` integer.
+The helper script gets the key color of the animation frame. The animation is a string. The frame index is a number from 0 to the frame count. The key the integer of the key number. The color is a `COLORREF` integer.
 
 See [ScriptGlobals.gml](scripts/ScriptGlobals.gml) for the list of key values.
 
