@@ -7,8 +7,10 @@ if (os_type == os_windows)
     global.PluginCopyKeyColorName = external_define('CChromaEditorLibrary.dll', 'PluginCopyKeyColorNameD', dll_cdecl, ty_real, 4, ty_string, ty_string, ty_real, ty_real);
     global.PluginGet1DColorName = external_define('CChromaEditorLibrary.dll', 'PluginGet1DColorNameD', dll_cdecl, ty_real, 3, ty_string, ty_real, ty_real);
     global.PluginGet2DColorName = external_define('CChromaEditorLibrary.dll', 'PluginGet2DColorNameD', dll_cdecl, ty_real, 4, ty_string, ty_real, ty_real, ty_real);
+    global.PluginGetCurrentFrameName = external_define('CChromaEditorLibrary.dll', 'PluginGetCurrentFrameNameD', dll_cdecl, ty_real, 1, ty_string);
     global.PluginGetDeviceName = external_define('CChromaEditorLibrary.dll', 'PluginGetDeviceNameD', dll_cdecl, ty_real, 1, ty_string);
     global.PluginGetDeviceTypeName = external_define('CChromaEditorLibrary.dll', 'PluginGetDeviceTypeNameD', dll_cdecl, ty_real, 1, ty_string);
+    global.PluginGetKeyColorName = external_define('CChromaEditorLibrary.dll', 'PluginGetKeyColorD', dll_cdecl, ty_real, 3, ty_string, ty_real, ty_real);
     global.PluginGetMaxColumn = external_define('CChromaEditorLibrary.dll', 'PluginGetMaxColumnD', dll_cdecl, ty_real, 1, ty_real);
     global.PluginGetFrameCountName = external_define('CChromaEditorLibrary.dll', 'PluginGetFrameCountNameD', dll_cdecl, ty_real, 1, ty_string);
     global.PluginGetMaxLeds = external_define('CChromaEditorLibrary.dll', 'PluginGetMaxLedsD', dll_cdecl, ty_real, 1, ty_real);
@@ -22,10 +24,12 @@ if (os_type == os_windows)
     global.PluginPauseAnimationName = external_define('CChromaEditorLibrary.dll', 'PluginPauseAnimationNameD', dll_cdecl, ty_real, 1, ty_string);
     global.PluginPlayAnimation = external_define('CChromaEditorLibrary.dll', 'PluginPlayAnimationD', dll_cdecl, ty_real, 1, ty_real);
     global.PluginPlayAnimationName = external_define('CChromaEditorLibrary.dll', 'PluginPlayAnimationNameD', dll_cdecl, ty_real, 2, ty_string, ty_real);
+    global.PluginPlayAnimationFrameName = external_define('CChromaEditorLibrary.dll', 'PluginPlayAnimationFrameNameD', dll_cdecl, ty_real, 3, ty_string, ty_real, ty_real);
     global.PluginPlayComposite = external_define('CChromaEditorLibrary.dll', 'PluginPlayCompositeD', dll_cdecl, ty_real, 2, ty_string, ty_real);
     global.PluginResumeAnimationName = external_define('CChromaEditorLibrary.dll', 'PluginResumeAnimationNameD', dll_cdecl, ty_real, 2, ty_string, ty_real);
     global.PluginSet1DColorName = external_define('CChromaEditorLibrary.dll', 'PluginSet1DColorNameD', dll_cdecl, ty_real, 4, ty_string, ty_real, ty_real, ty_real);
     global.PluginSet2DColorName = external_define('CChromaEditorLibrary.dll', 'PluginSet2DColorNameD', dll_cdecl, ty_real, 4, ty_string, ty_real, ty_real, ty_real);
+    global.PluginSetCurrentFrameName = external_define('CChromaEditorLibrary.dll', 'PluginSetCurrentFrameNameD', dll_cdecl, ty_real, 2, ty_string, ty_real);
     global.PluginSetKeyColorName = external_define('CChromaEditorLibrary.dll', 'PluginSetKeyColorNameD', dll_cdecl, ty_real, 4, ty_string, ty_real, ty_real, ty_real);
     global.PluginStopAnimation = external_define('CChromaEditorLibrary.dll', 'PluginStopAnimationD', dll_cdecl, ty_real, 1, ty_real);
     global.PluginStopComposite = external_define('CChromaEditorLibrary.dll', 'PluginStopCompositeD', dll_cdecl, ty_real, 1, ty_string);
