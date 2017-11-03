@@ -75,9 +75,11 @@ Add `Chroma` animation files to the project's `Included Files` to make the anima
 * [ScriptChromaCopyKeyColorName](#ScriptChromaCopyKeyColorName)
 * [ScriptChromaGet1DColorName](#ScriptChromaGet1DColorName)
 * [ScriptChromaGet2DColorName](#ScriptChromaGet2DColorName)
+* [ScriptChromaGetCurrentFrameName](#ScriptChromaGetCurrentFrameName)
 * [ScriptChromaGetDeviceName](#ScriptChromaGetDeviceName)
 * [ScriptChromaGetDeviceTypeName](#ScriptChromaGetDeviceTypeName)
 * [ScriptChromaGetFrameCountName](#ScriptChromaGetFrameCountName)
+* [ScriptChromaGetKeyColorName](#ScriptChromaGetKeyColorName)
 * [ScriptChromaGetMaxColumn](#ScriptChromaGetMaxColumn)
 * [ScriptChromaGetMaxLeds](#ScriptChromaGetMaxLeds)
 * [ScriptChromaGetMaxRow](#ScriptChromaGetMaxRow)
@@ -85,10 +87,12 @@ Add `Chroma` animation files to the project's `Included Files` to make the anima
 * [ScriptChromaOpenEditorDialog](#ScriptChromaOpenEditorDialog)
 * [ScriptChromaPauseAnimationName](#ScriptChromaPauseAnimationName)
 * [ScriptChromaPlayAnimationName](#ScriptChromaPlayAnimationName)
+* [ScriptChromaPlayAnimationFrameName](#ScriptChromaPlayAnimationFrameName)
 * [ScriptChromaPlayComposite](#ScriptChromaPlayComposite)
 * [ScriptChromaResumeAnimationName](#ScriptChromaResumeAnimationName)
 * [ScriptChromaSet1DColorName](#ScriptChromaSet1DColorName)
 * [ScriptChromaSet2DColorName](#ScriptChromaSet2DColorName)
+* [ScriptChromaSetCurrentFrameName](#ScriptChromaSetCurrentFrameName)
 * [ScriptChromaSetKeyColorName](#ScriptChromaSetKeyColorName)
 * [ScriptChromaStopComposite](#ScriptChromaStopComposite)
 * [ScriptChromaUninit](#ScriptChromaUninit)
@@ -194,6 +198,21 @@ ScriptChromaPlayAnimationName(animation, loop);
 ```
 
 
+<a name="ScriptChromaPlayAnimationFrameName"></a>
+**ScriptChromaPlayAnimationFrameName**
+
+The helper script plays an animation. The animation parameter is a string. The animation can play with loop `ON` or `OFF` starting at the `frameId`.
+
+```
+animation = 'Random_Keyboard.chroma';
+loopOn = 1.0;
+loopOff = 0.0;
+loop = loopOn;
+frameId = 12;
+ScriptChromaPlayAnimationFrameName(animation, frameId, loop);
+```
+
+
 <a name="ScriptChromaPlayComposite"></a>
 **ScriptChromaPlayComposite**
 
@@ -238,6 +257,21 @@ green = ScriptToBGRInt(0, 255, 0);
 blue = ScriptToBGRInt(0, 0, 255);
 color = red; 
 ScriptChromaSetKeyColorName(animation, frameIndex, key, color);
+```
+
+
+<a name="ScriptChromaGetKeyColorName"></a>
+**ScriptChromaGetKeyColorName**
+
+The helper script gets the key color to the animation frame. The animation is a string. The frame index is a number from 0 to the frame count. The key the integer of the key number. The color is a `COLORREF` integer.
+
+See [ScriptGlobals.gml](scripts/ScriptGlobals.gml) for the list of key values.
+
+```
+animation = 'Random_Keyboard.chroma';
+frameIndex = 0;
+key = global.RZKEY_W;
+color = ScriptChromaGetKeyColorName(animation, frameIndex, key);
 ```
 
 
@@ -315,6 +349,29 @@ for (frameIndex = 0; frameIndex < frameCount; ++frameIndex)
         }
     }
 }
+```
+
+
+<a name="ScriptChromaGetCurrentFrameName"></a>
+**ScriptChromaGetCurrentFrameName**
+
+The helper script gets the current frame of an animation.
+
+```
+animation2D = 'Random_Keyboard.chroma'
+currentFrame = ScriptChromaGetCurrentFrameName(animation2D);
+```
+
+
+<a name="ScriptChromaSetCurrentFrameName"></a>
+**ScriptChromaSetCurrentFrameName**
+
+The helper script sets the current frame of an animation.
+
+```
+animation2D = 'Random_Keyboard.chroma'
+frameId = 12;
+ScriptChromaSetCurrentFrameName(animation2D, frameId);
 ```
 
 
