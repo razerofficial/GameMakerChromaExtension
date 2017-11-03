@@ -519,11 +519,15 @@ Helper scripts wrap the Chroma DLL methods to make sure only defined methods are
 
 * [ScriptChromaGet2DColorName.gml](scripts/ScriptChromaGet2DColorName)
 
+* [ScriptChromaGetCurrentFrameName.gml](scripts/ScriptChromaGetCurrentFrameName.gml)
+
 * [ScriptChromaGetDeviceName.gml](scripts/ScriptChromaGetDeviceName)
 
 * [ScriptChromaGetDeviceTypeName.gml](scripts/ScriptChromaGetDeviceTypeName)
 
 * [ScriptChromaGetFrameCountName.gml](scripts/ScriptChromaGetFrameCountName.gml)
+
+* [ScriptChromaGetKeyColorName.gml](scripts/ScriptChromaGetKeyColorName.gml)
 
 * [ScriptChromaGetMaxColumn.gml](scripts/ScriptChromaGetMaxColumn)
 
@@ -539,6 +543,8 @@ Helper scripts wrap the Chroma DLL methods to make sure only defined methods are
 
 * [ScriptChromaPlayAnimationName.gml](scripts/ScriptChromaPlayAnimationName.gml)
 
+* [ScriptChromaPlayAnimationFrameName.gml](scripts/ScriptChromaPlayAnimationFrameName.gml)
+
 * [ScriptChromaPlayComposite.gml](scripts/ScriptChromaPlayComposite.gml)
 
 * [ScriptChromaResumeAnimationName.gml](scripts/ScriptChromaResumeAnimationName.gml)
@@ -546,6 +552,8 @@ Helper scripts wrap the Chroma DLL methods to make sure only defined methods are
 * [ScriptChromaSet1DColorName.gml](scripts/ScriptChromaSet1DColorName)
 
 * [ScriptChromaSet2DColorName.gml](scripts/ScriptChromaSet2DColorName)
+
+* [ScriptChromaSetCurrentFrameName.gml](scripts/ScriptChromaSetCurrentFrameName.gml)
 
 * [ScriptChromaSetKeyColorName.gml](scripts/ScriptChromaSetKeyColorName.gml)
 
